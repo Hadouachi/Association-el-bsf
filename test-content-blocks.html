@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Content Blocks API</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin: 10px 0; padding: 10px; background: #f8f9fa; border-radius: 4px; }
+        input, textarea { width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test de l'API Content Blocks</h1>
+    
+    <div class="test-section">
+        <h2>1. Récupérer les blocs d'un contenu</h2>
+        <input type="text" id="aboutContentId" placeholder="ID du contenu (ex: about-1)" value="about-1">
+        <button onclick="fetchBlocks()">Récupérer les blocs</button>
+        <div id="fetchResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Créer un nouveau bloc</h2>
+        <input type="text" id="newBlockType" placeholder="Type de bloc (ex: TEXT)" value="TEXT">
+        <input type="text" id="newBlockTitle" placeholder="Titre du bloc" value="Mon premier bloc">
+        <textarea id="newBlockContent" placeholder="Contenu du bloc" rows="3">Contenu de test pour vérifier le système</textarea>
+        <button onclick="createBlock()">Créer le bloc</button>
+        <div id="createResult" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Tester l'API de réorganisation</h2>
+        <input type="text" id="reorderBlockIds" placeholder="IDs des blocs séparés par des virgules" value="">
+        <button onclick="reorderBlocks()">Réorganiser</button>
+        <div id="reorderResult" class="result"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3003/api';
+
+        async function fetchBlocks() {
+            const aboutContentId = document.getElementById('aboutContentId').value;
+            const resultDiv = document.getElementById('fetchResult');
+            
+            try {
+                const response = await fetch(`${API_BASE}/content-blocks?aboutContentId=${aboutContentId}`);
+                const data = await response.json();
+                
+                resultDiv.innerHTML = `
+                    <h4>✅ Succès (${response.status})</h4>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h4>❌ Erreur</h4>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+
+        async function createBlock() {
+            const aboutContentId = document.getElementById('aboutContentId').value;
+            const type = document.getElementById('newBlockType').value;
+            const title = document.getElementById('newBlockTitle').value;
+            const content = document.getElementById('newBlockContent').value;
+            const resultDiv = document.getElementById('createResult');
+            
+            try {
+                const formData = new FormData();
+                formData.append('aboutContentId', aboutContentId);
+                formData.append('type', type);
+                formData.append('title', title);
+                formData.append('content', content);
+                
+                const response = await fetch(`${API_BASE}/content-blocks`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <h4>✅ Bloc créé avec succès (${response.status})</h4>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                    // Mettre à jour la liste des blocs
+                    fetchBlocks();
+                } else {
+                    resultDiv.innerHTML = `
+                        <h4>❌ Erreur (${response.status})</h4>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h4>❌ Erreur</h4>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+
+        async function reorderBlocks() {
+            const aboutContentId = document.getElementById('aboutContentId').value;
+            const blockIds = document.getElementById('reorderBlockIds').value.split(',').map(id => id.trim());
+            const resultDiv = document.getElementById('reorderResult');
+            
+            try {
+                const response = await fetch(`${API_BASE}/content-blocks/reorder`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ aboutContentId, blockIds })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <h4>✅ Blocs réorganisés avec succès (${response.status})</h4>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                    // Mettre à jour la liste des blocs
+                    fetchBlocks();
+                } else {
+                    resultDiv.innerHTML = `
+                        <h4>❌ Erreur (${response.status})</h4>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <h4>❌ Erreur</h4>
+                    <p>${error.message}</p>
+                `;
+            }
+        }
+
+        // Charger les blocs au chargement de la page
+        window.onload = function() {
+            fetchBlocks();
+        };
+    </script>
+</body>
+</html>
+
+
+
+

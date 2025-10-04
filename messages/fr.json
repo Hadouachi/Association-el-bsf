@@ -1,0 +1,81 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "activities": "Activités",
+    "news": "Actualités",
+    "programs": "Programmes",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Association El BSF",
+      "subtitle": "Mémorisation du Coran Karim",
+      "description": "Dédiée à l'éducation islamique et à la mémorisation du Coran pour les jeunes",
+      "cta": "Découvrir nos programmes"
+    },
+    "features": {
+      "title": "Nos Objectifs",
+      "memorization": {
+        "title": "Mémorisation du Coran",
+        "description": "Programmes spécialisés pour la mémorisation complète du Coran"
+      },
+      "education": {
+        "title": "Éducation Islamique",
+        "description": "Formation complète en sciences islamiques et valeurs morales"
+      },
+      "youth": {
+        "title": "Jeunesse",
+        "description": "Accompagnement des jeunes dans leur parcours spirituel"
+      }
+    }
+  },
+  "about": {
+    "title": "À propos de notre association",
+    "mission": "Notre mission",
+    "vision": "Notre vision",
+    "values": "Nos valeurs"
+  },
+  "activities": {
+    "title": "Nos Activités",
+    "past": "Activités passées",
+    "current": "Activités en cours",
+    "upcoming": "Activités à venir"
+  },
+  "news": {
+    "title": "Actualités",
+    "readMore": "Lire la suite",
+    "publishedOn": "Publié le"
+  },
+  "programs": {
+    "title": "Nos Programmes",
+    "memorization": "Programme de mémorisation",
+    "tajweed": "Règles de Tajweed",
+    "tarbiyah": "Éducation spirituelle"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "message": "Message",
+      "send": "Envoyer"
+    },
+    "info": {
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email"
+    }
+  },
+  "footer": {
+    "description": "Association dédiée à la mémorisation du Coran Karim",
+    "links": "Liens rapides",
+    "contact": "Contact",
+    "rights": "Tous droits réservés"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "ar": "العربية"
+  }
+} 

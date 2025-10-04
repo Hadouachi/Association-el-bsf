@@ -1,0 +1,876 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #f8fafc;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #3b82f6;
+}
+
+/* Base typography improvements */
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Page-specific improvements */
+.home-page {
+  background: #f8fafc;
+}
+
+.section-spacing {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 2rem 0;
+  }
+}
+
+/* Card improvements */
+.activity-card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Text improvements */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Community section styling */
+.community-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.community-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Footer improvements */
+.footer-section {
+  background: #1f2937;
+  color: #d1d5db;
+}
+
+.footer-section a {
+  color: #d1d5db;
+  transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+  color: #3b82f6;
+}
+
+/* Button improvements */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Icon improvements */
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Social media icons */
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #3b82f6;
+  transition: color 0.2s ease;
+}
+
+.social-icon:hover {
+  color: #1d4ed8;
+}
+
+/* News images - Force consistent dimensions */
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.news-image-container {
+  position: relative;
+  overflow: hidden;
+  background: #f3f4f6;
+  height: 200px; /* Hauteur fixe pour toutes les images */
+  width: 100%;
+}
+
+.news-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Featured news image */
+.featured-news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.featured-news-image-container {
+  position: relative;
+  overflow: hidden;
+  background: #f3f4f6;
+  height: 300px; /* Hauteur fixe pour l'image featured */
+  width: 100%;
+}
+
+/* News card improvements */
+.news-card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.news-card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card-excerpt {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* Category badges */
+.category-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.category-programme {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.category-evenement {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.category-formation {
+  background-color: #f3e8ff;
+  color: #7c3aed;
+}
+
+.category-partenariat {
+  background-color: #fed7aa;
+  color: #c2410c;
+}
+
+.category-general {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* Home page news section */
+.home-news-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+}
+
+.home-news-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+}
+
+/* Featured news card on home page */
+.featured-news-home {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-news-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(30px, -30px);
+}
+
+.featured-news-home .news-card-title {
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.featured-news-home .news-card-excerpt {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+.featured-news-home .category-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.featured-news-home .news-card-meta {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.featured-news-home .news-card-meta span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* News section header */
+.news-section-header {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.news-section-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  border-radius: 2px;
+}
+
+/* News card hover effects */
+.news-card:hover .news-image {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-card-title {
+  color: #3b82f6;
+  transition: color 0.2s ease;
+}
+
+/* News carousel animation */
+.news-carousel {
+  display: flex;
+  animation: scrollNews 20s linear infinite;
+  gap: 2rem;
+  width: max-content;
+}
+
+.news-carousel:hover {
+  animation-play-state: paused;
+}
+
+.news-carousel-item {
+  flex-shrink: 0;
+  width: 300px;
+}
+
+@keyframes scrollNews {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* News carousel container */
+.news-carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .featured-news-home {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .featured-news-home .news-card-title {
+    font-size: 1.5rem;
+  }
+  
+  .news-carousel-item {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-carousel-item {
+    width: 260px;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Hero Banner Responsive Styles */
+.hero-banner {
+  position: relative;
+  height: 80vh; /* Augmenté de 70vh à 80vh */
+  min-height: 500px; /* Augmenté de 400px à 500px */
+  max-height: 700px; /* Augmenté de 600px à 700px */
+  overflow: hidden;
+}
+
+.hero-banner-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.8) 0%,
+    rgba(16, 185, 129, 0.7) 50%,
+    rgba(245, 158, 11, 0.8) 100%
+  );
+}
+
+.hero-banner-overlay-light {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(16, 185, 129, 0.05) 50%,
+    rgba(245, 158, 11, 0.1) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: white;
+  padding-top: 500px; /* Ajusté pour la nouvelle hauteur mobile de 700px */
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 3rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-button-primary {
+  background-color: white;
+  color: #2563eb;
+}
+
+.hero-button-primary:hover {
+  background-color: #f3f4f6;
+}
+
+/* Animation de vibration pour le bouton "Nous contacter" */
+@keyframes vibrate {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+.hero-button-secondary {
+  border: 2px solid white;
+  color: white;
+  animation: vibrate 2s ease-in-out infinite;
+  animation-delay: 1s; /* Commence après 1 seconde */
+}
+
+.hero-button-secondary:hover {
+  background-color: white;
+  color: #2563eb;
+  animation: none; /* Arrête l'animation au survol */
+}
+
+/* Decorative elements */
+.hero-decorative {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-decorative-circle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.hero-decorative-circle:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  width: 5rem;
+  height: 5rem;
+}
+
+.hero-decorative-circle:nth-child(2) {
+  top: 20%;
+  right: 20%;
+  width: 4rem;
+  height: 4rem;
+  animation-delay: 1s;
+}
+
+.hero-decorative-circle:nth-child(3) {
+  bottom: 10%;
+  left: 25%;
+  width: 3rem;
+  height: 3rem;
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+}
+
+/* Scroll indicator - SUPPRIMÉ */
+/* .scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator-container {
+  width: 1.5rem;
+  height: 2.5rem;
+  border: 2px solid white;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-indicator-dot {
+  width: 0.25rem;
+  height: 0.75rem;
+  background-color: white;
+  border-radius: 9999px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+} */
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: 700px; /* Adapté à la hauteur de l'image mobile */
+    max-height: 700px; /* Adapté à la hauteur de l'image mobile */
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    gap: 0.75rem;
+  }
+  
+  .hero-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-banner {
+    min-height: 550px;
+    max-height: 700px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.125rem;
+  }
+} 
+
+/* Desktop adjustments - Remonter les boutons de 80px */
+@media (min-width: 769px) {
+  .hero-content {
+    padding-top: 420px; /* Réduit de 500px à 420px (80px de moins) */
+  }
+} 
+
+/* Features Section Styles */
+.features-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.feature-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon-container {
+  width: 8rem; /* Augmenté de 6rem à 8rem */
+  height: 8rem; /* Augmenté de 6rem à 8rem */
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  position: relative;
+  overflow: hidden;
+  /* Supprimé le fond coloré */
+}
+
+.feature-icon {
+  position: relative;
+  z-index: 1;
+  opacity: 1 !important;
+  display: block !important;
+  border-radius: 1rem; /* Bordure arrondie pour l'image */
+  width: 100% !important; /* Utilise toute la largeur du container */
+  height: 100% !important; /* Utilise toute la hauteur du container */
+  object-fit: cover; /* Garde les proportions de l'image */
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.feature-description {
+  color: #6b7280;
+  line-height: 1.6;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature-icon-container {
+    width: 6rem; /* Augmenté de 5rem à 6rem pour mobile */
+    height: 6rem; /* Augmenté de 5rem à 6rem pour mobile */
+  }
+  
+  .feature-title {
+    font-size: 1.125rem;
+  }
+  
+  .feature-description {
+    font-size: 0.875rem;
+  }
+} 

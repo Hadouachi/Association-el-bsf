@@ -1,0 +1,81 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "activities": "Activities",
+    "news": "News",
+    "programs": "Programs",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "El BSF Association",
+      "subtitle": "Quran Karim Memorization",
+      "description": "Dedicated to Islamic education and Quran memorization for youth",
+      "cta": "Discover our programs"
+    },
+    "features": {
+      "title": "Our Objectives",
+      "memorization": {
+        "title": "Quran Memorization",
+        "description": "Specialized programs for complete Quran memorization"
+      },
+      "education": {
+        "title": "Islamic Education",
+        "description": "Complete training in Islamic sciences and moral values"
+      },
+      "youth": {
+        "title": "Youth",
+        "description": "Supporting youth in their spiritual journey"
+      }
+    }
+  },
+  "about": {
+    "title": "About our association",
+    "mission": "Our mission",
+    "vision": "Our vision",
+    "values": "Our values"
+  },
+  "activities": {
+    "title": "Our Activities",
+    "past": "Past activities",
+    "current": "Current activities",
+    "upcoming": "Upcoming activities"
+  },
+  "news": {
+    "title": "News",
+    "readMore": "Read more",
+    "publishedOn": "Published on"
+  },
+  "programs": {
+    "title": "Our Programs",
+    "memorization": "Memorization program",
+    "tajweed": "Tajweed rules",
+    "tarbiyah": "Spiritual education"
+  },
+  "contact": {
+    "title": "Contact us",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email"
+    }
+  },
+  "footer": {
+    "description": "Association dedicated to Quran Karim memorization",
+    "links": "Quick links",
+    "contact": "Contact",
+    "rights": "All rights reserved"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "ar": "العربية"
+  }
+} 

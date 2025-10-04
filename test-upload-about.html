@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Upload About</title>
+</head>
+<body>
+    <h1>Test Upload About</h1>
+    
+    <form id="uploadForm">
+        <input type="file" id="files" name="files" multiple accept="image/*">
+        <button type="submit">Upload</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault()
+            
+            const formData = new FormData()
+            const files = document.getElementById('files').files
+            
+            for (let file of files) {
+                formData.append('files', file)
+            }
+            
+            try {
+                const response = await fetch('/api/upload-about', {
+                    method: 'POST',
+                    body: formData
+                })
+                
+                const result = await response.json()
+                document.getElementById('result').innerHTML = `
+                    <h3>Résultat:</h3>
+                    <pre>${JSON.stringify(result, null, 2)}</pre>
+                `
+            } catch (error) {
+                document.getElementById('result').innerHTML = `
+                    <h3>Erreur:</h3>
+                    <pre>${error.message}</pre>
+                `
+            }
+        })
+    </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test API About</title>
+</head>
+<body>
+    <h1>Test des API About</h1>
+    
+    <h2>GET /api/about-content</h2>
+    <button onclick="testGet()">Tester GET</button>
+    <div id="getResult"></div>
+    
+    <h2>POST /api/about-content</h2>
+    <button onclick="testPost()">Tester POST</button>
+    <div id="postResult"></div>
+    
+    <script>
+        async function testGet() {
+            try {
+                const response = await fetch('/api/about-content')
+                const data = await response.json()
+                document.getElementById('getResult').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>'
+            } catch (error) {
+                document.getElementById('getResult').innerHTML = '<p style="color: red;">Erreur: ' + error.message + '</p>'
+            }
+        }
+        
+        async function testPost() {
+            try {
+                const formData = new FormData()
+                formData.append('type', 'INFORMATION')
+                formData.append('title', 'Test API')
+                formData.append('content', 'Contenu de test')
+                formData.append('order', '10')
+                formData.append('isPublished', 'true')
+                
+                const response = await fetch('/api/about-content', {
+                    method: 'POST',
+                    body: formData
+                })
+                const data = await response.json()
+                document.getElementById('postResult').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>'
+            } catch (error) {
+                document.getElementById('postResult').innerHTML = '<p style="color: red;">Erreur: ' + error.message + '</p>'
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+

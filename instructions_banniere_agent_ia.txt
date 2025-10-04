@@ -1,0 +1,244 @@
+INSTRUCTIONS COMPLÈTES POUR CRÉATION DE BANNIÈRES RESPONSIVE
+Association El BSF - Mémorisation du Coran Karim
+================================================================
+
+📋 INFORMATIONS DU PROJET
+=========================
+
+Nom : Association El BSF (Bienfaits et Sagesse Familiale)
+Domaine : Éducation islamique et mémorisation du Coran
+Public cible : Jeunes musulmans et familles
+Langue : Français et Arabe
+Style : Moderne, professionnel, respectueux
+
+🎯 OBJECTIF
+===========
+
+Créer deux images de bannière responsive pour un site web moderne :
+- Desktop : 1920px × 800px
+- Mobile : 768px × 500px
+
+🏗️ STRUCTURE ET COMPOSITION
+===========================
+
+DESKTOP (1920×800px) :
+┌─────────────────────────────────────────────────────────┐
+│  Zone de sécurité (texte) - 200px haut/bas            │
+│                                                       │
+│  ┌─────────────────────────────────────────────────┐   │
+│  │                                               │   │
+│  │            CONTENU PRINCIPAL                  │   │
+│  │  (Mosquée + Coran + Calligraphie)            │   │
+│  │                                               │   │
+│  │  Zone de texte : "Association El BSF"        │   │
+│  │  "Mémorisation du Coran Karim"               │   │
+│  │                                               │   │
+│  └─────────────────────────────────────────────────┘   │
+│                                                       │
+│  Zone de sécurité (texte) - 200px haut/bas            │
+└─────────────────────────────────────────────────────────┘
+
+MOBILE (768×500px) :
+┌─────────────────────┐
+│ Zone libre (100px)  │
+│                     │
+│ ┌─────────────────┐ │
+│ │ CONTENU CENTRAL │ │
+│ │ (Éléments       │ │
+│ │  principaux)    │ │
+│ │                 │ │
+│ │ Zone texte      │ │
+│ └─────────────────┘ │
+│                     │
+│ Zone libre (100px)  │
+└─────────────────────┘
+
+🎨 ÉLÉMENTS VISUELS À INCLURE
+==============================
+
+1. ARRIÈRE-PLAN :
+- Gradient principal : Bleu (#2563eb) → Vert (#10b981) → Doré (#f59e0b)
+- Direction : Diagonal (135°) ou radial depuis le centre
+- Texture : Légère, subtile, professionnelle
+
+2. ÉLÉMENTS PRINCIPAUX :
+- Mosquée moderne (en arrière-plan, floue)
+- Coran ouvert avec calligraphie arabe
+- Motifs géométriques islamiques (hexagones, étoiles)
+- Calligraphie arabe du nom "El BSF" ou "القرآن الكريم"
+
+3. ÉLÉMENTS DÉCORATIFS :
+- Cercles semi-transparents (blanc, 10-20% opacity)
+- Lignes géométriques subtiles
+- Étoiles islamiques (5 ou 6 branches)
+- Motifs de fleurs arabesques
+
+🎨 PALETTE DE COULEURS
+======================
+
+COULEURS PRINCIPALES :
+- Bleu principal : #2563eb
+- Vert islamique : #10b981  
+- Doré : #f59e0b
+- Blanc : #ffffff
+- Gris foncé : #1f2937
+
+GRADIENTS RECOMMANDÉS :
+1. Bleu → Vert : #2563eb → #10b981
+2. Bleu → Doré : #2563eb → #f59e0b
+3. Vert → Doré : #10b981 → #f59e0b
+
+📱 SPÉCIFICATIONS TECHNIQUES
+============================
+
+DESKTOP (1920×800px) :
+- Format : JPG
+- Résolution : 72 DPI
+- Poids : Maximum 500KB
+- Qualité : 90%
+
+MOBILE (768×500px) :
+- Format : JPG
+- Résolution : 72 DPI
+- Poids : Maximum 200KB
+- Qualité : 90%
+
+🎯 STYLE ET AMBIANCE
+====================
+
+TONALITÉ :
+- Moderne mais respectueux
+- Professionnel et accueillant
+- Spirituel sans être trop religieux
+- Éducatif et inspirant
+
+ÉLÉMENTS DE STYLE :
+- Minimaliste mais riche en symboles
+- Équilibré (symétrie ou règle des tiers)
+- Profondeur (ombres subtiles)
+- Luminosité (contraste pour la lisibilité)
+
+📝 TEXTE À PRÉVOIR
+===================
+
+ZONE DE TEXTE (à laisser libre) :
+- Titre principal : "Association El BSF"
+- Sous-titre : "Mémorisation du Coran Karim"
+- Description : "Dédiée à l'éducation islamique"
+
+CALLIGRAPHIE ARABE À INCLURE :
+- "القرآن الكريم" (Le Noble Coran)
+- "مدرسة القرآن" (École du Coran)
+- "تعليم القرآن" (Enseignement du Coran)
+- "حفظ القرآن" (Mémorisation du Coran)
+
+PHRASES ARABES SUPPLÉMENTAIRES :
+- "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ" (Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux)
+- "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ" (Allah est avec les patients)
+- "وَمَا تَفْعَلُوا مِنْ خَيْرٍ يَعْلَمْهُ اللَّهُ" (Et tout bien que vous faites, Allah le sait)
+
+🔧 INSTRUCTIONS TECHNIQUES SPÉCIFIQUES
+=======================================
+
+POUR L'AGENT IA :
+1. Créez d'abord la version desktop (1920×800px)
+2. Adaptez ensuite pour mobile (768×500px)
+3. Gardez les éléments centraux visibles sur mobile
+4. Simplifiez les détails pour mobile
+5. Maintenez la lisibilité du texte
+
+ÉLÉMENTS À ÉVITER :
+❌ Texte trop petit
+❌ Éléments trop près des bords
+❌ Couleurs trop vives
+❌ Motifs trop complexes
+❌ Calligraphie illisible
+
+ÉLÉMENTS À PRIVILÉGIER :
+✅ Contraste élevé pour le texte
+✅ Éléments centraux bien visibles
+✅ Harmonie des couleurs
+✅ Profondeur et dimension
+✅ Éléments symboliques islamiques
+
+🎨 INSPIRATIONS VISUELLES
+==========================
+
+RÉFÉRENCES DE STYLE :
+1. Architecture islamique moderne
+2. Calligraphie arabe contemporaine
+3. Motifs géométriques traditionnels
+4. Photographie de mosquées modernes
+5. Design de sites éducatifs islamiques
+
+ÉLÉMENTS SPÉCIFIQUES :
+- Dômes de mosquée (silhouettes)
+- Minarets élégants
+- Calligraphie du Coran
+- Motifs de zellige modernisés
+- Étoiles et croissants subtils
+
+📊 CHECKLIST DE VALIDATION
+==========================
+
+AVANT LIVRAISON, VÉRIFIEZ :
+☐ Lisibilité du texte blanc
+☐ Contraste suffisant
+☐ Éléments centraux visibles
+☐ Harmonie des couleurs
+☐ Taille de fichier correcte
+☐ Résolution appropriée
+☐ Pas d'éléments coupés
+☐ Style cohérent entre desktop/mobile
+
+🎯 LIVRAISON ATTENDUE
+=====================
+
+FICHIERS À FOURNIR :
+1. hero-banner-desktop.jpg (1920×800px, <500KB)
+2. hero-banner-mobile.jpg (768×500px, <200KB)
+3. Versions WebP (optionnel)
+4. Documentation des couleurs utilisées
+
+INFORMATIONS À INCLURE :
+- Palette de couleurs exacte utilisée
+- Fontes utilisées pour la calligraphie
+- Inspirations et références
+- Notes sur l'adaptation mobile
+
+📝 NOTES SPÉCIALES
+==================
+
+CALLIGRAPHIE ARABE :
+- Utilisez un style moderne et lisible
+- Évitez les styles trop ornementaux
+- Privilégiez la lisibilité sur mobile
+- Couleur : Blanc ou doré sur fond sombre
+
+ÉLÉMENTS ISLAMIQUES :
+- Respectez les symboles islamiques
+- Évitez les représentations figuratives
+- Privilégiez les motifs géométriques
+- Utilisez des étoiles à 5 ou 6 branches
+
+ADAPTATION MOBILE :
+- Simplifiez les motifs complexes
+- Agrandissez les éléments importants
+- Réduisez le nombre d'éléments
+- Gardez le texte central lisible
+
+🎨 MOODBOARD SUGGESTIONS
+=========================
+
+CRÉEZ D'ABORD UN MOODBOARD AVEC :
+1. Style moderne minimaliste
+2. Style traditionnel contemporain
+3. Style architectural islamique
+4. Style calligraphique élégant
+
+PERMETTEZ AU CLIENT DE CHOISIR LA DIRECTION VISUELLE
+QUI CORRESPOND LE MIEUX À L'IDENTITÉ DE L'ASSOCIATION.
+
+================================================================
+FIN DES INSTRUCTIONS
+================================================================ 

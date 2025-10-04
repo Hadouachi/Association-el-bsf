@@ -1,0 +1,42 @@
+{
+  "name": "association-el-bsf",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "db:seed": "node scripts/seed.js",
+    "db:reset": "prisma migrate reset"
+  },
+  "dependencies": {
+    "@formatjs/intl": "^3.1.7",
+    "@prisma/client": "^6.14.0",
+    "@types/react-beautiful-dnd": "^13.1.8",
+    "autoprefixer": "^10.4.16",
+    "lucide-react": "^0.294.0",
+    "mysql2": "^3.15.0",
+    "next": "^14.2.32",
+    "next-intl": "^3.5.4",
+    "node-fetch": "^3.3.2",
+    "postcss": "^8.4.32",
+    "prisma": "^6.14.0",
+    "react": "^18",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18",
+    "tailwindcss": "^3.3.6",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "typescript": "^5"
+  }
+}
