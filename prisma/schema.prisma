@@ -6,19 +6,19 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Activity {
   id            String   @id @default(cuid())
   title         String
-  description   String?  @db.Text
+  description   String?
   coverImage    String?
-  images        String?  @db.Text // JSON string
-  videos        String?  @db.Text // JSON string
-  contentBlocks String?  @db.Text // JSON string
-  style         String?  @db.Text // JSON string
+  images        String? // JSON string
+  videos        String? // JSON string
+  contentBlocks String? // JSON string
+  style         String? // JSON string
   status        String   @default("DRAFT")
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
@@ -29,7 +29,7 @@ model Activity {
 model News {
   id          String   @id @default(cuid())
   title       String
-  content     String   @db.Text
+  content     String
   excerpt     String?
   image       String?
   category    String   @default("GENERAL")
@@ -46,7 +46,7 @@ model AboutContent {
   id          String   @id @default(cuid())
   title       String
   subtitle    String?
-  description String?  @db.Text
+  description String?
   coverImage  String?
   status      String   @default("DRAFT")
   createdAt   DateTime @default(now())
