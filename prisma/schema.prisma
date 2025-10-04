@@ -1,9 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,57 +11,60 @@ datasource db {
 }
 
 model Activity {
-  id              String   @id @default(cuid())
-  title           String
-  description     String?
-  longDescription String?
-  date            String?
-  time            String?
-  location        String?
-  participants    String?
-  status          ActivityStatus?
-  coverImage      String?
-  images          Json?
-  videos          Json?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id            String   @id @default(cuid())
+  title         String
+  description   String?  @db.Text
+  coverImage    String?
+  images        String?  @db.Text // JSON string
+  videos        String?  @db.Text // JSON string
+  contentBlocks String?  @db.Text // JSON string
+  style         String?  @db.Text // JSON string
+  status        String   @default("DRAFT")
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("Activity")
+}
+
+model News {
+  id          String   @id @default(cuid())
+  title       String
+  content     String   @db.Text
+  excerpt     String?
+  image       String?
+  category    String   @default("GENERAL")
+  author      String?
+  status      String   @default("DRAFT")
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("News")
 }
 
 model AboutContent {
   id          String   @id @default(cuid())
-  type        AboutContentType
   title       String
-  content     String?
-  images      Json?
-  videos      Json?
-  order       Int      @default(0)
-  isPublished Boolean  @default(true)
+  subtitle    String?
+  description String?  @db.Text
+  coverImage  String?
+  status      String   @default("DRAFT")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  @@map("AboutContent")
 }
 
 model ContentBlock {
-  id          String   @id @default(cuid())
-  activityId  String
-  type        String
-  content     String?
-  images      Json?
-  videos      Json?
-  order       Int      @default(0)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
+  id             String   @id @default(cuid())
+  type           String
+  content        String?  @db.Text
+  settings       String?  @db.Text // JSON string
+  videos         String?  @db.Text // JSON string
+  order          Int      @default(0)
+  aboutContentId String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
-enum ActivityStatus {
-  upcoming
-  ongoing
-  completed
-}
-
-enum AboutContentType {
-  ANNOUNCEMENT
-  WORK_PROJECT
-  INFORMATION
-  MILESTONE
-  PARTNERSHIP
+  @@map("ContentBlocks")
 }
