@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "npx prisma generate && node init-database.js && next build",
     "postbuild": "node init-database.js",
+    "check-db": "node check-database.js",
     "start": "next start",
     "lint": "next lint",
     "db:generate": "prisma generate",
