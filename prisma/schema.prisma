@@ -6,19 +6,19 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model Activity {
   id            String   @id @default(cuid())
   title         String
-  description   String?
+  description   String?  @db.Text
   coverImage    String?
-  images        String? // JSON string
-  videos        String? // JSON string
-  contentBlocks String? // JSON string
-  style         String? // JSON string
+  images        String?  @db.Text // JSON string
+  videos        String?  @db.Text // JSON string
+  contentBlocks String?  @db.Text // JSON string
+  style         String?  @db.Text // JSON string
   status        String   @default("DRAFT")
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
