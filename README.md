@@ -1,167 +1,94 @@
-# Association El BSF - Site Web
+# 🕌 Association El BSF
 
-Site web moderne et responsive pour l'association de mémorisation du Coran Karim El BSF.
+Site web officiel de l'Association El BSF - Organisation dédiée à la promotion de l'éducation islamique et à la mémorisation du Coran.
 
-## 🎯 Objectifs
+## 🌟 Fonctionnalités
 
-- Présenter l'association et ses activités
-- Afficher les programmes de mémorisation
-- Publier les actualités et événements
-- Permettre le contact avec l'association
-- Support multilingue (Français, Anglais, Arabe)
+- **Page d'accueil** avec carousel d'actualités dynamique
+- **Gestion des activités** (CRUD complet)
+- **Gestion des actualités** (CRUD complet) 
+- **Gestion de la page À propos** (CRUD complet)
+- **Interface d'administration** complète
+- **Upload d'images et vidéos**
+- **Design responsive** adapté mobile et desktop
+- **Internationalisation** (Français/Anglais)
 
-## 🚀 Technologies Utilisées
+## 🚀 Technologies
 
-### Frontend
-- **Next.js 14** - Framework React avec App Router
-- **TypeScript** - Typage statique pour la sécurité
-- **Tailwind CSS** - Framework CSS utilitaire
-- **next-intl** - Internationalisation
-- **Lucide React** - Icônes modernes
+- **Next.js 14** avec App Router
+- **TypeScript** pour la sécurité des types
+- **Tailwind CSS** pour le styling
+- **Zustand** pour la gestion d'état
+- **MySQL** pour la base de données
+- **Next-intl** pour l'internationalisation
 
-### Backend (Prévu)
-- **Next.js API Routes** - API RESTful
-- **Prisma ORM** - Gestion de base de données
-- **PostgreSQL/MySQL** - Base de données
-- **NextAuth.js** - Authentification
+## 📦 Installation
 
-## 📁 Structure du Projet
-
-```
-Association-el-bsf/
-├── app/                    # Pages Next.js (App Router)
-│   ├── [locale]/          # Pages avec support multilingue
-│   ├── globals.css        # Styles globaux
-│   └── layout.tsx         # Layout principal
-├── components/            # Composants réutilisables
-│   ├── layout/           # Header, Footer
-│   ├── ui/               # Composants UI de base
-│   └── sections/         # Sections de pages
-├── messages/             # Fichiers de traduction
-│   ├── fr.json          # Français
-│   ├── en.json          # Anglais
-│   └── ar.json          # Arabe
-├── public/               # Assets statiques
-└── types/                # Types TypeScript
-```
-
-## 🛠️ Installation
-
-1. **Cloner le projet**
 ```bash
-git clone [url-du-repo]
-cd Association-el-bsf
-```
+# Cloner le repository
+git clone https://github.com/votre-username/Association-el-bsf.git
 
-2. **Installer les dépendances**
-```bash
+# Installer les dépendances
 npm install
-```
 
-3. **Lancer le serveur de développement**
-```bash
+# Configurer les variables d'environnement
+cp .env.example .env.local
+
+# Démarrer le serveur de développement
 npm run dev
 ```
 
-4. **Ouvrir dans le navigateur**
+## 🗄️ Base de données
+
+1. Créer une base de données MySQL `association_el_bsf`
+2. Exécuter le script `create-production-tables.sql`
+3. Importer les données avec `database-import.sql`
+
+## 🌐 Déploiement
+
+Le site est configuré pour être déployé sur Vercel :
+
+1. Pousser le code sur GitHub
+2. Connecter le repository à Vercel
+3. Configurer les variables d'environnement
+4. Déployer automatiquement
+
+Voir `DEPLOYMENT_GUIDE.md` pour les instructions détaillées.
+
+## 📁 Structure du projet
+
 ```
-http://localhost:3000
+├── app/                    # Pages Next.js (App Router)
+│   ├── [locale]/          # Pages internationalisées
+│   ├── api/               # API Routes
+│   └── globals.css        # Styles globaux
+├── components/            # Composants réutilisables
+├── lib/                   # Stores et utilitaires
+├── public/                # Fichiers statiques
+└── types/                 # Définitions TypeScript
 ```
 
-## 🌐 Pages Disponibles
+## 🎯 Pages principales
 
-- **Accueil** (`/`) - Présentation de l'association
-- **À propos** (`/about`) - Mission, vision, valeurs
-- **Activités** (`/activities`) - Activités passées et à venir
-- **Actualités** (`/news`) - Articles et événements
-- **Programmes** (`/programs`) - Programmes de mémorisation
-- **Contact** (`/contact`) - Formulaire de contact
+- **Accueil** : `/` - Présentation et actualités
+- **Activités** : `/activities` - Liste des activités
+- **Actualités** : `/news` - Articles et nouvelles
+- **À propos** : `/about` - Informations sur l'association
+- **Admin** : `/admin` - Interface d'administration
 
-## 🎨 Design System
+## 🔧 Scripts disponibles
 
-### Couleurs
-- **Primary** : Bleu (#0ea5e9) - Couleur principale
-- **Secondary** : Jaune (#eab308) - Couleur secondaire
-- **Islamic Green** : Vert (#22c55e) - Éléments islamiques
-- **Gold** : Or (#f59e0b) - Accents dorés
-
-### Typographie
-- **Inter** - Police principale (Latin)
-- **Noto Sans Arabic** - Police arabe
-
-### Responsive
-- **Mobile First** - Design adaptatif
-- **Breakpoints** : sm (640px), md (768px), lg (1024px), xl (1280px)
-
-## 🌍 Internationalisation
-
-Le site supporte 3 langues :
-- **Français** (par défaut)
-- **Anglais**
-- **Arabe** (avec support RTL)
-
-### Ajouter une nouvelle traduction
-
-1. Ajouter la clé dans `messages/fr.json`
-2. Traduire dans `messages/en.json`
-3. Traduire dans `messages/ar.json`
-
-## 📱 Fonctionnalités
-
-### ✅ Implémentées
-- [x] Structure de base Next.js
-- [x] Support multilingue
-- [x] Header responsive avec navigation
-- [x] Footer avec liens et contact
-- [x] Page d'accueil avec sections
-- [x] Design system avec Tailwind
-- [x] Composants réutilisables
-
-### 🚧 En cours
-- [ ] Pages individuelles (About, Activities, etc.)
-- [ ] Système de blog/actualités
-- [ ] Formulaire de contact fonctionnel
-- [ ] Galerie de médias
-
-### 📋 À venir
-- [ ] Backend avec API
-- [ ] Base de données
-- [ ] Système d'authentification
-- [ ] Panel d'administration
-- [ ] Système de newsletter
-- [ ] Intégration réseaux sociaux
-
-## 🚀 Déploiement
-
-### Vercel (Recommandé)
 ```bash
-npm run build
-vercel --prod
+npm run dev          # Développement
+npm run build        # Build de production
+npm run start        # Démarrage en production
+npm run lint         # Vérification du code
 ```
 
-### Autres plateformes
-- **Netlify** - Compatible Next.js
-- **Railway** - Déploiement simple
-- **DigitalOcean** - VPS personnalisé
+## 📞 Support
 
-## 🤝 Contribution
-
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
-3. Commit les changements (`git commit -m 'Add AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
-
-## 📞 Contact
-
-- **Email** : contact@elbsf.org
-- **Téléphone** : +33 1 23 45 67 89
-- **Adresse** : 123 Rue de la Mosquée, Ville
-
-## 📄 Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+Pour toute question ou problème, contactez l'équipe technique.
 
 ---
 
-**Association El BSF** - Dédiée à la mémorisation du Coran Karim 🕌 
+**Association El BSF** - Promouvoir l'éducation islamique de qualité 🕌
