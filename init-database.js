@@ -1,6 +1,13 @@
 const mysql = require('mysql2/promise');
 
 async function initDatabase() {
+  console.log('🔍 DATABASE_URL:', process.env.DATABASE_URL ? 'Définie' : 'Non définie');
+  
+  if (!process.env.DATABASE_URL) {
+    console.log('❌ DATABASE_URL non définie, arrêt du script');
+    return;
+  }
+  
   const connection = await mysql.createConnection(process.env.DATABASE_URL);
   
   console.log('🔌 Connexion à la base de données...');
