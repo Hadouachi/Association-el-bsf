@@ -2,23 +2,20 @@ import { PrismaClient } from '@prisma/client'
 import mysql from 'mysql2/promise'
 
 // Configuration de la base de données
+// IMPORTANT:
+// In production (Vercel), we must use DATABASE_URL provided via env vars.
+// Never fallback to localhost – that causes ECONNREFUSED on the server.
 export const dbConfig = {
-  host: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT || '3306'),
-  database: process.env.DB_NAME || 'association_el_bsf',
-  username: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'Hadouachi20@',
+  url: process.env.DATABASE_URL,
 }
 
 // Fonction pour obtenir une connexion MySQL
 export const getConnection = async () => {
-  return await mysql.createConnection({
-    host: dbConfig.host,
-    port: dbConfig.port,
-    user: dbConfig.username,
-    password: dbConfig.password,
-    database: dbConfig.database,
-  })
+  if (!dbConfig.url) {
+    throw new Error('DATABASE_URL is not defined. Please set it in your environment.')
+  }
+  // Prefer passing a single URL string to avoid accidental localhost fallbacks
+  return await mysql.createConnection(dbConfig.url)
 }
 
 // Client Prisma avec configuration personnalisée
@@ -26,10 +23,11 @@ export const createPrismaClient = () => {
   const client = new PrismaClient({
     datasources: {
       db: {
-        url: process.env.DATABASE_URL || `mysql://${dbConfig.username}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`
-      }
+        // Only use DATABASE_URL. If it's missing, Prisma will throw and that's desired.
+        url: process.env.DATABASE_URL,
+      },
     },
-    log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error']
+    log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
   })
 
   return client

@@ -1,19 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import mysql from 'mysql2/promise'
 
-// Configuration de la base de données MySQL
-const dbConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'Hadouachi20@',
-  database: 'association_el_bsf',
-  port: 3306,
-  charset: 'utf8mb4'
-}
-
-// Fonction pour créer une connexion MySQL
+// Always connect using DATABASE_URL to avoid localhost fallbacks in production
 async function getConnection() {
-  return await mysql.createConnection(dbConfig)
+  const { DATABASE_URL } = process.env
+  if (!DATABASE_URL) {
+    throw new Error('DATABASE_URL is not defined. Cannot establish DB connection.')
+  }
+  return await mysql.createConnection(DATABASE_URL)
 }
 
 export async function GET() {
