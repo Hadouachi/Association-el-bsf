@@ -20,15 +20,18 @@ export const getConnection = async () => {
 
 // Client Prisma avec configuration personnalisée
 export const createPrismaClient = () => {
-  const client = new PrismaClient({
-    datasources: {
-      db: {
-        // Only use DATABASE_URL. If it's missing, Prisma will throw and that's desired.
-        url: process.env.DATABASE_URL,
-      },
-    },
-    log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
-  })
+  // If DATABASE_URL is present, pass it explicitly; otherwise let Prisma use its default
+  const hasUrl = !!process.env.DATABASE_URL
+  const client = hasUrl
+    ? new PrismaClient({
+        datasources: {
+          db: { url: process.env.DATABASE_URL },
+        },
+        log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+      })
+    : new PrismaClient({
+        log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+      })
 
   return client
 }
