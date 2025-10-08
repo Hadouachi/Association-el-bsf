@@ -180,12 +180,12 @@ export default function AddActivityPage() {
     const uploadedVideos: Array<{src: string, title: string, description: string, poster: string}> = []
     for (const file of Array.from(files)) {
       console.log('📤 Upload de vidéo:', file.name)
-      const formData = new FormData()
-      formData.append('file', file)
+          const formData = new FormData()
+          formData.append('file', file)
       try {
-        const response = await fetch('/api/upload', { method: 'POST', body: formData })
-        if (response.ok) {
-          const data = await response.json()
+          const response = await fetch('/api/upload', { method: 'POST', body: formData })
+          if (response.ok) {
+            const data = await response.json()
           console.log('✅ Upload vidéo réussi:', data.url)
           uploadedVideos.push({ 
             src: data.url, 
@@ -499,7 +499,7 @@ export default function AddActivityPage() {
                         {block.images && block.images.length > 0 && (
                           <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
                             {block.images.length} image(s)
-                            </span>
+                          </span>
                           )}
                         {block.videos && block.videos.length > 0 && (
                           <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">
@@ -627,16 +627,16 @@ export default function AddActivityPage() {
 
                         {/* Gestion des vidéos pour les blocs vidéo */}
                         {block.type === 'video' && (
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
                               Vidéos
-                    </label>
+                          </label>
                     <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                       <input
                         type="file"
                         multiple
                         accept="video/mp4"
-                        onChange={(e) => {
+                            onChange={(e) => {
                                   if (e.target.files) {
                                     handleVideoUpload(e.target.files, index)
                                   }

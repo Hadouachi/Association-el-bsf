@@ -1,0 +1,246 @@
+{
+  "timestamp": "2025-10-08T20:55:25.346Z",
+  "activities": [
+    {
+      "id": "1759955226501i9e88anbt",
+      "title": "Test Local - Formation React",
+      "description": "Formation React en local",
+      "longDescription": "Une formation complète sur React avec hooks, context et state management.",
+      "date": "2025-02-01",
+      "time": "14:00",
+      "location": "Centre El BSF Local",
+      "participants": "15",
+      "status": "upcoming",
+      "coverImage": "/images/activities/test-react.svg",
+      "images": [
+        "/images/activities/test-react.svg"
+      ],
+      "videos": [
+        {
+          "src": "/videos/activities/test-react-demo.mp4",
+          "title": "Démonstration React",
+          "poster": "/images/activities/test-react-poster.jpg",
+          "description": "Aperçu de la formation React"
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "test-block-1",
+          "type": "text",
+          "order": 1,
+          "content": "Cette activité a été créée en local pour tester le système."
+        }
+      ],
+      "createdAt": "2025-10-08T20:27:06.000Z",
+      "updatedAt": "2025-10-08T20:36:37.000Z"
+    },
+    {
+      "id": "1758486561539o3ltau0bx",
+      "title": "Comment on appel les distributeurs de l'eau avec de jus et parfois",
+      "description": "",
+      "longDescription": "",
+      "date": "2025-10-12",
+      "time": "15:20",
+      "location": "Salle de mosqué ",
+      "participants": "600",
+      "status": "ongoing",
+      "coverImage": "/uploads/activities/1758486415467-xye4p8adskb.jpg",
+      "images": [],
+      "videos": [],
+      "contentBlocks": [
+        {
+          "id": "175848642674885gbkuqv1",
+          "type": "title",
+          "order": 0,
+          "style": "",
+          "content": "Comment on appel les distributeurs de l'eau avec de jus et parfois"
+        },
+        {
+          "id": "1758486452992k50nkbrr7",
+          "type": "paragraph",
+          "order": 1,
+          "style": "",
+          "content": "Il en existe plusieurs types :  Distributeur automatique de boissons : eau, jus, soda, café, etc.  Distributeur automatique de snacks : biscuits, chips, barres chocolatées, etc.  Distributeur mixte : qui propose à la fois des boissons et de la nourriture.  📚 Référence :  Norme AFNOR (France) : le terme officiel est “distributeur automatique” (AFNOR NF EN 50597:2015 sur les machines de vente automatique).  En anglais : “vending machine”."
+        },
+        {
+          "id": "17584864723292fbts4rz8",
+          "type": "image-gallery",
+          "order": 2,
+          "style": "",
+          "images": [
+            "/uploads/activities/1758486550808-7jw1yn6z2y4.jpg",
+            "/uploads/activities/1758486550867-c0ncxfy4heq.jpg",
+            "/uploads/activities/1758486550937-orebqtbu7bs.jpg",
+            "/uploads/activities/1758486550987-ac2czrauea.jpg",
+            "/uploads/images/1759603665742-qjgc1slbj5.png"
+          ],
+          "content": ""
+        },
+        {
+          "id": "1758486716301gaaomj036",
+          "type": "paragraph",
+          "order": 3,
+          "style": "",
+          "content": "Reformuler ça '' On doit continuer à purger la bosse à gauche, puis  purger légèrement la partie gauche de la faille (cette partie masque la profondeur de la faille) pour bien redresser le front avant de le lever. La faille est assez profonde (plus de 1 m), donc il faut supprimer tous les dièdres autour pour voir correctement le front ( et l'étendue de la faille) et faciliter les travaux de BP, et les forages de tire"
+        },
+        {
+          "id": "1759955476201gvgsjelm1",
+          "type": "image-gallery",
+          "order": 4,
+          "style": "",
+          "images": [
+            "/uploads/images/1759955515412-t6w0jd0bn7c.jpg",
+            "/uploads/images/1759955515463-jw4cb4jmpee.jpg",
+            "/uploads/images/1759955515517-vbthvyal53g.jpg",
+            "/uploads/images/1759955515651-ho0obm759s.jpg",
+            "/uploads/images/1759955515733-qy43gr336ss.jpg"
+          ],
+          "content": ""
+        }
+      ],
+      "createdAt": "2025-09-21T20:29:21.000Z",
+      "updatedAt": "2025-10-08T20:31:58.000Z"
+    },
+    {
+      "id": "1758480500325nnsmb7rz5",
+      "title": "La  cérémonie de base ",
+      "description": "",
+      "longDescription": "",
+      "date": "2002-12-12",
+      "time": "",
+      "location": "salle de réunion ",
+      "participants": "600",
+      "status": "upcoming",
+      "coverImage": "/uploads/activities/1758480500218-72tpwq59dw8.jpg",
+      "images": [],
+      "videos": [],
+      "contentBlocks": null,
+      "createdAt": "2025-09-21T18:48:20.000Z",
+      "updatedAt": "2025-09-21T18:48:20.000Z"
+    },
+    {
+      "id": "1758480487072v18fgybof",
+      "title": "La  cérémonie de base ",
+      "description": "",
+      "longDescription": "",
+      "date": "2002-12-12",
+      "time": "",
+      "location": "salle de réunion ",
+      "participants": "600",
+      "status": "upcoming",
+      "coverImage": "/uploads/activities/1758480486084-94mugheqvah.jpg",
+      "images": [],
+      "videos": [],
+      "contentBlocks": null,
+      "createdAt": "2025-09-21T18:48:07.000Z",
+      "updatedAt": "2025-09-21T18:48:07.000Z"
+    },
+    {
+      "id": "test-1",
+      "title": "Test Activity",
+      "description": "Description test",
+      "longDescription": "Description longue test",
+      "date": "2024-01-15",
+      "time": "14:00",
+      "location": "Lieu test",
+      "participants": "50",
+      "status": "completed",
+      "coverImage": "/images/activity-cover1.jpg",
+      "images": [
+        "/uploads/activities/test1.jpg",
+        "/uploads/activities/test2.jpg"
+      ],
+      "videos": [],
+      "contentBlocks": [
+        {
+          "id": "block-1",
+          "type": "title",
+          "order": 0,
+          "style": "",
+          "images": [],
+          "content": "Titre de test"
+        },
+        {
+          "id": "block-2",
+          "type": "paragraph",
+          "order": 1,
+          "style": "",
+          "images": [],
+          "content": "Paragraphe de test"
+        },
+        {
+          "id": "block-3",
+          "type": "image-gallery",
+          "order": 2,
+          "style": "",
+          "images": [
+            "/uploads/activities/gallery1.jpg",
+            "/uploads/activities/gallery2.jpg"
+          ],
+          "content": "Galerie de test"
+        }
+      ],
+      "createdAt": "2025-09-21T18:42:51.000Z",
+      "updatedAt": "2025-09-21T18:42:51.000Z"
+    }
+  ],
+  "news": [
+    {
+      "id": "e5427eb5-a13f-11f0-a76f-00ff7f09e563",
+      "title": "Nouveau programme de mémorisation pour les jeunes",
+      "excerpt": "Nous lançons un nouveau programme spécialement conçu pour les jeunes de 12 à 18 ans, avec des méthodes d apprentissage adaptées à leur âge.",
+      "content": "Notre association est fière d annoncer le lancement d un nouveau programme de mémorisation du Coran spécialement conçu pour les jeunes. Ce programme utilise des méthodes pédagogiques modernes et adaptées aux besoins spécifiques des adolescents. Il comprend des sessions interactives, des outils numériques d apprentissage et un suivi personnalisé pour chaque étudiant.",
+      "author": "Imam Ahmed",
+      "category": "Programme",
+      "image": "/uploads/images/1759596861527-0834zd0moex4.jpg",
+      "status": "published",
+      "publishedAt": "2025-10-04T16:54:26.000Z",
+      "createdAt": "2025-10-04T16:33:44.000Z",
+      "updatedAt": "2025-10-04T16:54:25.000Z"
+    },
+    {
+      "id": "e5436f08-a13f-11f0-a76f-00ff7f09e563",
+      "title": "Cérémonie de remise des diplômes 2024",
+      "excerpt": "Félicitations à nos 25 étudiants qui ont terminé avec succès leur mémorisation complète du Coran cette année.",
+      "content": "Une cérémonie émouvante s est déroulée ce weekend pour célébrer la réussite de nos 25 étudiants qui ont terminé leur mémorisation complète du Coran. Cette cérémonie a rassemblé familles, amis et membres de la communauté dans une atmosphère de joie et de fierté.",
+      "author": "Directeur El BSF",
+      "category": "Événement",
+      "image": "/uploads/images/1759596884899-2wnrajrg57g.jpg",
+      "status": "published",
+      "publishedAt": "2025-10-04T16:54:52.000Z",
+      "createdAt": "2025-10-04T16:33:44.000Z",
+      "updatedAt": "2025-10-04T16:54:52.000Z"
+    },
+    {
+      "id": "e54375a3-a13f-11f0-a76f-00ff7f09e563",
+      "title": "Ouverture de nouveaux cours de Tajweed",
+      "excerpt": "Nous ouvrons de nouveaux cours de Tajweed pour tous les niveaux, du débutant au confirmé.",
+      "content": "**Pour répondre à la demande croissante, nous ouvrons d**e nouveaux cours de Tajweed. Ces cours sont dispensés par des professeurs qualifiés et certifiés dans l enseignement des règles de récitation du Coran.",
+      "author": "Prof. Fatima",
+      "category": "Formation",
+      "image": "/uploads/images/1759596914187-lokglb7gwx.jpg",
+      "status": "published",
+      "publishedAt": "2025-10-04T16:55:17.000Z",
+      "createdAt": "2025-10-04T16:33:44.000Z",
+      "updatedAt": "2025-10-04T16:55:16.000Z"
+    }
+  ],
+  "about": [
+    {
+      "id": "about-1",
+      "type": "ANNOUNCEMENT",
+      "title": "À propos de l'Association El BSF",
+      "subtitle": "Notre mission et notre vision",
+      "description": "L'Association El BSF est une organisation dédiée à la promotion de l'éducation islamique et à la mémorisation du Coran. Nous nous engageons à offrir des programmes de qualité pour tous les âges.",
+      "coverImage": "/uploads/images/1759601428597-ywac0k63u2.png",
+      "status": "published",
+      "content": null,
+      "images": null,
+      "videos": null,
+      "order": 0,
+      "isPublished": 1,
+      "createdAt": "2025-10-04T18:05:05.000Z",
+      "updatedAt": "2025-10-04T18:10:33.000Z"
+    }
+  ]
+}

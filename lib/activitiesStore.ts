@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { getAllLocalActivities, getLocalActivityById, LocalActivity } from '../data/localActivities'
 
 export interface ContentBlock {
   id: string
@@ -64,13 +65,25 @@ export const useActivitiesStoreNew = create<ActivitiesStore>()(
         set({ isLoading: true, error: null })
         try {
           console.log('🔄 Récupération des activités...')
-          const response = await fetch('/api/activities')
-          if (!response.ok) {
-            throw new Error('Erreur lors de la récupération des activités')
+          
+          // Essayer d'abord l'API
+          try {
+            const response = await fetch('/api/activities')
+            if (response.ok) {
+              const data = await response.json()
+              console.log('✅ Activités récupérées depuis l\'API:', data.length)
+              set({ activities: data, isLoading: false })
+              return
+            }
+          } catch (apiError) {
+            console.warn('⚠️ API non disponible, utilisation des données locales')
           }
-          const data = await response.json()
-          console.log('✅ Activités récupérées:', data.length)
-          set({ activities: data, isLoading: false })
+          
+          // Fallback vers les données locales
+          const localData = getAllLocalActivities()
+          console.log('✅ Activités chargées depuis les données locales:', localData.length)
+          set({ activities: localData, isLoading: false })
+          
         } catch (error) {
           console.error('❌ Erreur lors de la récupération des activités:', error)
           set({ 
@@ -180,7 +193,17 @@ export const useActivitiesStoreNew = create<ActivitiesStore>()(
 
       getActivity: (id) => {
         const state = get()
-        return state.activities.find(activity => activity.id === id)
+        let activity = state.activities.find(activity => activity.id === id)
+        
+        // Si pas trouvé dans le store, essayer les données locales
+        if (!activity) {
+          activity = getLocalActivityById(id)
+          if (activity) {
+            console.log('✅ Activité trouvée dans les données locales:', id)
+          }
+        }
+        
+        return activity
       }
     }),
     {
