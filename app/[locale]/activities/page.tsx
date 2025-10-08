@@ -1,18 +1,46 @@
 'use client'
 
-import { useEffect } from 'react'
-import { useActivitiesStore } from '@/lib/activitiesStore'
+import { useEffect, useState } from 'react'
 import { Calendar, Clock, MapPin, Users, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { useLocale } from 'next-intl'
 
+interface Activity {
+  id: string
+  title: string
+  description: string
+  date: string
+  time: string
+  location: string
+  status: string
+  coverImage: string
+}
+
 export default function ActivitiesPage() {
   const locale = useLocale()
-  const { activities, isLoading, error, fetchActivities } = useActivitiesStore()
+  const [activities, setActivities] = useState<Activity[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    const fetchActivities = async () => {
+      try {
+        const response = await fetch('/api/activities')
+        if (response.ok) {
+          const data = await response.json()
+          setActivities(data)
+        } else {
+          setError('Erreur lors du chargement des activités')
+        }
+      } catch (err) {
+        setError('Erreur lors du chargement des activités')
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
     fetchActivities()
-  }, [fetchActivities])
+  }, [])
 
   const getStatusColor = (status: string) => {
     switch (status) {

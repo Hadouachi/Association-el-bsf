@@ -4,10 +4,8 @@ import { useTranslations } from 'next-intl'
 import { BookOpen, Users, Heart, ArrowRight, Calendar, MapPin, Newspaper, Clock, User } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import FeatureIcon from '@/app/components/FeatureIcon'
-import { useActivitiesStore } from '@/lib/activitiesStore'
-import { useNewsStore } from '@/lib/newsStore'
 import UploadedImage from '@/components/ui/UploadedImage'
 import NewsCard from '@/components/NewsCard'
 
@@ -15,16 +13,62 @@ interface HomePageProps {
   params: { locale: string }
 }
 
+interface Activity {
+  id: string
+  title: string
+  description: string
+  date: string
+  time: string
+  location: string
+  status: string
+  coverImage: string
+}
+
+interface News {
+  id: string
+  title: string
+  excerpt: string
+  author: string
+  category: string
+  image: string
+  publishedAt: string
+}
+
 export default function HomePage({ params: { locale } }: HomePageProps) {
   const t = useTranslations('home')
-  const { activities, fetchActivities, isLoading: activitiesLoading } = useActivitiesStore()
-  const { news, fetchNews, isLoading: newsLoading } = useNewsStore()
+  const [activities, setActivities] = useState<Activity[]>([])
+  const [news, setNews] = useState<News[]>([])
+  const [activitiesLoading, setActivitiesLoading] = useState(true)
+  const [newsLoading, setNewsLoading] = useState(true)
 
   // Charger les données au montage du composant
   useEffect(() => {
-    fetchActivities()
-    fetchNews()
-  }, [fetchActivities, fetchNews])
+    const fetchData = async () => {
+      try {
+        // Charger les activités
+        const activitiesResponse = await fetch('/api/activities')
+        if (activitiesResponse.ok) {
+          const activitiesData = await activitiesResponse.json()
+          setActivities(activitiesData)
+        }
+        setActivitiesLoading(false)
+
+        // Charger les actualités
+        const newsResponse = await fetch('/api/news')
+        if (newsResponse.ok) {
+          const newsData = await newsResponse.json()
+          setNews(newsData)
+        }
+        setNewsLoading(false)
+      } catch (error) {
+        console.error('Erreur lors du chargement des données:', error)
+        setActivitiesLoading(false)
+        setNewsLoading(false)
+      }
+    }
+
+    fetchData()
+  }, [])
 
   const features = [
     {
