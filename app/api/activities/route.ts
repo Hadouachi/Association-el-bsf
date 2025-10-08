@@ -14,7 +14,7 @@ async function getConnection() {
 export async function GET() {
   try {
     // En production, utiliser les données statiques
-    if (!isLocal) {
+    if (!isLocal || process.env.VERCEL === 'true') {
       console.log('📊 Récupération des activités (mode production - données statiques)')
       const activities = await getActivities()
       if (activities) {

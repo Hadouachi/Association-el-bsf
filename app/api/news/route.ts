@@ -6,7 +6,7 @@ import { getNews, isLocal } from '../../../lib/dataManager'
 export async function GET(request: NextRequest) {
   try {
     // En production, utiliser les données statiques
-    if (!isLocal) {
+    if (!isLocal || process.env.VERCEL === 'true') {
       console.log('📰 Récupération des actualités (mode production - données statiques)')
       const news = await getNews()
       if (news) {

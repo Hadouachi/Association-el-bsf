@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
   
   try {
     // En production, utiliser les données statiques
-    if (!isLocal) {
+    if (!isLocal || process.env.VERCEL === 'true') {
       console.log('ℹ️ Récupération du contenu À propos (mode production - données statiques)')
       const about = await getAbout()
       if (about && about.length > 0) {
