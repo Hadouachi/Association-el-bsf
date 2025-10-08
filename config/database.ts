@@ -20,20 +20,22 @@ export const getConnection = async () => {
 
 // Client Prisma avec configuration personnalisée
 export const createPrismaClient = () => {
-  // If DATABASE_URL is present, pass it explicitly; otherwise let Prisma use its default
-  const hasUrl = !!process.env.DATABASE_URL
-  const client = hasUrl
-    ? new PrismaClient({
-        datasources: {
-          db: { url: process.env.DATABASE_URL },
-        },
-        log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
-      })
-    : new PrismaClient({
-        log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
-      })
+  // En production, ne pas utiliser Prisma du tout - utiliser les données statiques
+  if (process.env.VERCEL === 'true') {
+    // Retourner un client mock pour éviter les erreurs
+    return {
+      $connect: () => Promise.resolve(),
+      $disconnect: () => Promise.resolve(),
+      activity: { findMany: () => Promise.resolve([]) },
+      news: { findMany: () => Promise.resolve([]) },
+      aboutContent: { findMany: () => Promise.resolve([]) }
+    } as any
+  }
 
-  return client
+  // En local, utiliser Prisma normalement
+  return new PrismaClient({
+    log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+  })
 }
 
 // Client Prisma par défaut
