@@ -2,8 +2,8 @@
 import { getAllLocalActivities, getLocalActivityById } from '../data/localActivities'
 
 // Détection de l'environnement
-export const isLocal = process.env.NODE_ENV === 'development' || process.env.VERCEL !== 'true'
-export const isProduction = process.env.VERCEL === 'true'
+export const isLocal = process.env.NODE_ENV === 'development' && process.env.VERCEL !== 'true'
+export const isProduction = process.env.VERCEL === 'true' || process.env.NODE_ENV === 'production'
 
 // Données statiques pour la production (seront générées automatiquement)
 let staticData: {
@@ -179,3 +179,7 @@ export const getAbout = async () => {
 }
 
 console.log(`🔧 Mode: ${isLocal ? 'LOCAL (Base de données)' : 'PRODUCTION (Données statiques)'}`)
+console.log(`🔧 NODE_ENV: ${process.env.NODE_ENV}`)
+console.log(`🔧 VERCEL: ${process.env.VERCEL}`)
+console.log(`🔧 isLocal: ${isLocal}`)
+console.log(`🔧 isProduction: ${isProduction}`)
