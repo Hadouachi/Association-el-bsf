@@ -1,6 +1,23 @@
 {
   "activities": [
     {
+      "id": "1759958403169dgluidi91",
+      "title": "cv",
+      "description": "",
+      "longDescription": "",
+      "date": "",
+      "time": "",
+      "location": "",
+      "participants": "",
+      "status": "upcoming",
+      "coverImage": "",
+      "images": [],
+      "videos": [],
+      "contentBlocks": [],
+      "createdAt": "2025-10-08T21:20:03.000Z",
+      "updatedAt": "2025-10-08T21:20:03.000Z"
+    },
+    {
       "id": "1759955226501i9e88anbt",
       "title": "Test Local - Formation React",
       "description": "Formation React en local",
@@ -242,6 +259,6 @@
       "updatedAt": "2025-10-04T18:10:33.000Z"
     }
   ],
-  "exportedAt": "2025-10-08T21:15:57.725Z",
+  "exportedAt": "2025-10-08T21:20:46.929Z",
   "version": "1.0.0"
 }
