@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import mysql from 'mysql2/promise'
+import { getAbout, isLocal } from '../../../lib/dataManager'
 
 const dbConfig = {
   host: 'localhost',
@@ -14,6 +15,17 @@ export async function GET(request: NextRequest) {
   let connection
   
   try {
+    // En production, utiliser les données statiques
+    if (!isLocal) {
+      console.log('ℹ️ Récupération du contenu À propos (mode production - données statiques)')
+      const about = await getAbout()
+      if (about && about.length > 0) {
+        console.log('✅ Contenu À propos statique chargé')
+        return NextResponse.json(about[0])
+      }
+    }
+
+    // En local, utiliser la base de données
     connection = await mysql.createConnection(dbConfig)
     
     const [rows] = await connection.execute(`

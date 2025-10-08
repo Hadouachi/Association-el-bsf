@@ -1,9 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getConnection } from '@/config/database'
+import { getNews, isLocal } from '../../../lib/dataManager'
 
 // GET - Récupérer toutes les actualités
 export async function GET(request: NextRequest) {
   try {
+    // En production, utiliser les données statiques
+    if (!isLocal) {
+      console.log('📰 Récupération des actualités (mode production - données statiques)')
+      const news = await getNews()
+      if (news) {
+        console.log('✅ Actualités statiques chargées:', news.length)
+        return NextResponse.json(news)
+      }
+    }
+
+    // En local, utiliser la base de données
     console.log('📰 Récupération des actualités')
     const connection = await getConnection()
     

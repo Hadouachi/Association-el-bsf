@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import mysql from 'mysql2/promise'
+import { getActivities, isLocal } from '../../../lib/dataManager'
 
 // Always connect using DATABASE_URL to avoid localhost fallbacks in production
 async function getConnection() {
@@ -12,6 +13,17 @@ async function getConnection() {
 
 export async function GET() {
   try {
+    // En production, utiliser les données statiques
+    if (!isLocal) {
+      console.log('📊 Récupération des activités (mode production - données statiques)')
+      const activities = await getActivities()
+      if (activities) {
+        console.log('✅ Activités statiques chargées:', activities.length)
+        return NextResponse.json(activities)
+      }
+    }
+
+    // En local, utiliser la base de données
     console.log('🔄 Connexion à la base de données...')
     const connection = await getConnection()
     console.log('✅ Connexion établie')

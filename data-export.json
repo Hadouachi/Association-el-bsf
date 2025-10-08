@@ -1,5 +1,4 @@
 {
-  "timestamp": "2025-10-08T20:55:25.346Z",
   "activities": [
     {
       "id": "1759955226501i9e88anbt",
@@ -114,7 +113,7 @@
       "coverImage": "/uploads/activities/1758480500218-72tpwq59dw8.jpg",
       "images": [],
       "videos": [],
-      "contentBlocks": null,
+      "contentBlocks": [],
       "createdAt": "2025-09-21T18:48:20.000Z",
       "updatedAt": "2025-09-21T18:48:20.000Z"
     },
@@ -131,7 +130,7 @@
       "coverImage": "/uploads/activities/1758480486084-94mugheqvah.jpg",
       "images": [],
       "videos": [],
-      "contentBlocks": null,
+      "contentBlocks": [],
       "createdAt": "2025-09-21T18:48:07.000Z",
       "updatedAt": "2025-09-21T18:48:07.000Z"
     },
@@ -186,17 +185,17 @@
   ],
   "news": [
     {
-      "id": "e5427eb5-a13f-11f0-a76f-00ff7f09e563",
-      "title": "Nouveau programme de mémorisation pour les jeunes",
-      "excerpt": "Nous lançons un nouveau programme spécialement conçu pour les jeunes de 12 à 18 ans, avec des méthodes d apprentissage adaptées à leur âge.",
-      "content": "Notre association est fière d annoncer le lancement d un nouveau programme de mémorisation du Coran spécialement conçu pour les jeunes. Ce programme utilise des méthodes pédagogiques modernes et adaptées aux besoins spécifiques des adolescents. Il comprend des sessions interactives, des outils numériques d apprentissage et un suivi personnalisé pour chaque étudiant.",
-      "author": "Imam Ahmed",
-      "category": "Programme",
-      "image": "/uploads/images/1759596861527-0834zd0moex4.jpg",
+      "id": "e54375a3-a13f-11f0-a76f-00ff7f09e563",
+      "title": "Ouverture de nouveaux cours de Tajweed",
+      "excerpt": "Nous ouvrons de nouveaux cours de Tajweed pour tous les niveaux, du débutant au confirmé.",
+      "content": "**Pour répondre à la demande croissante, nous ouvrons d**e nouveaux cours de Tajweed. Ces cours sont dispensés par des professeurs qualifiés et certifiés dans l enseignement des règles de récitation du Coran.",
+      "author": "Prof. Fatima",
+      "category": "Formation",
+      "image": "/uploads/images/1759596914187-lokglb7gwx.jpg",
       "status": "published",
-      "publishedAt": "2025-10-04T16:54:26.000Z",
+      "publishedAt": "2025-10-04T16:55:17.000Z",
       "createdAt": "2025-10-04T16:33:44.000Z",
-      "updatedAt": "2025-10-04T16:54:25.000Z"
+      "updatedAt": "2025-10-04T16:55:16.000Z"
     },
     {
       "id": "e5436f08-a13f-11f0-a76f-00ff7f09e563",
@@ -212,17 +211,17 @@
       "updatedAt": "2025-10-04T16:54:52.000Z"
     },
     {
-      "id": "e54375a3-a13f-11f0-a76f-00ff7f09e563",
-      "title": "Ouverture de nouveaux cours de Tajweed",
-      "excerpt": "Nous ouvrons de nouveaux cours de Tajweed pour tous les niveaux, du débutant au confirmé.",
-      "content": "**Pour répondre à la demande croissante, nous ouvrons d**e nouveaux cours de Tajweed. Ces cours sont dispensés par des professeurs qualifiés et certifiés dans l enseignement des règles de récitation du Coran.",
-      "author": "Prof. Fatima",
-      "category": "Formation",
-      "image": "/uploads/images/1759596914187-lokglb7gwx.jpg",
+      "id": "e5427eb5-a13f-11f0-a76f-00ff7f09e563",
+      "title": "Nouveau programme de mémorisation pour les jeunes",
+      "excerpt": "Nous lançons un nouveau programme spécialement conçu pour les jeunes de 12 à 18 ans, avec des méthodes d apprentissage adaptées à leur âge.",
+      "content": "Notre association est fière d annoncer le lancement d un nouveau programme de mémorisation du Coran spécialement conçu pour les jeunes. Ce programme utilise des méthodes pédagogiques modernes et adaptées aux besoins spécifiques des adolescents. Il comprend des sessions interactives, des outils numériques d apprentissage et un suivi personnalisé pour chaque étudiant.",
+      "author": "Imam Ahmed",
+      "category": "Programme",
+      "image": "/uploads/images/1759596861527-0834zd0moex4.jpg",
       "status": "published",
-      "publishedAt": "2025-10-04T16:55:17.000Z",
+      "publishedAt": "2025-10-04T16:54:26.000Z",
       "createdAt": "2025-10-04T16:33:44.000Z",
-      "updatedAt": "2025-10-04T16:55:16.000Z"
+      "updatedAt": "2025-10-04T16:54:25.000Z"
     }
   ],
   "about": [
@@ -242,5 +241,7 @@
       "createdAt": "2025-10-04T18:05:05.000Z",
       "updatedAt": "2025-10-04T18:10:33.000Z"
     }
-  ]
+  ],
+  "exportedAt": "2025-10-08T21:15:57.725Z",
+  "version": "1.0.0"
 }
