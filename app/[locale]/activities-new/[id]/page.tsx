@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { useActivitiesStore } from '@/lib/activitiesStore'
 import { Calendar, Clock, MapPin, Users, Video, Image as ImageIcon, ArrowLeft, X } from 'lucide-react'
 import { Activity, ContentBlock } from '@/lib/activitiesStore'
+import UploadedImage from '@/components/ui/UploadedImage'
 
 // Composant de galerie interactive
 const InteractiveGallery = ({ images, title }: { images: string[], title: string }) => {
@@ -47,12 +48,11 @@ const InteractiveGallery = ({ images, title }: { images: string[], title: string
         <div className="relative overflow-hidden rounded-lg bg-gray-100">
           {/* Image principale */}
           <div className="relative aspect-video md:aspect-[16/9]">
-            <img
+            <UploadedImage
               src={images[currentIndex]}
               alt={`${title} - Image ${currentIndex + 1}`}
+              fill
               className="w-full h-full object-cover cursor-pointer select-none"
-              loading="eager"
-              decoding="async"
               onClick={openFullscreen}
               draggable={false}
             />
@@ -107,13 +107,12 @@ const InteractiveGallery = ({ images, title }: { images: string[], title: string
                 }`}
                 onClick={() => goToImage(imgIndex)}
               >
-                <img
+                <UploadedImage
                   src={image}
                   alt={`Miniature ${imgIndex + 1}`}
+                  width={80}
+                  height={60}
                   className="w-16 h-12 md:w-20 md:h-15 object-cover"
-                  loading="lazy"
-                  decoding="async"
-                  draggable={false}
                 />
               </div>
             ))}
@@ -135,11 +134,11 @@ const InteractiveGallery = ({ images, title }: { images: string[], title: string
 
           {/* Image plein écran */}
           <div className="relative w-full h-full flex items-center justify-center">
-            <img
+            <UploadedImage
               src={images[currentIndex]}
               alt={`${title} - Image ${currentIndex + 1}`}
+              fill
               className="max-w-full max-h-full object-contain select-none"
-              draggable={false}
             />
             
             {/* Navigation plein écran */}
@@ -361,13 +360,11 @@ export default function ActivityDetailPageNew() {
         {/* Image de couverture */}
         {activity.coverImage ? (
           <div className="absolute inset-0 overflow-hidden">
-            <img
+            <UploadedImage
               src={activity.coverImage}
               alt={activity.title}
+              fill
               className="w-full h-full object-cover"
-              loading="eager"
-              decoding="async"
-              fetchPriority="high"
             />
           </div>
         ) : (
@@ -489,12 +486,11 @@ export default function ActivityDetailPageNew() {
                 {activity.images.map((image: string, index: number) => (
                   <div key={index} className="group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 md:hover:-translate-y-2">
                     <div className="relative aspect-square md:aspect-auto">
-                      <img
+                      <UploadedImage
                         src={image}
                         alt={`Image ${index + 1}`}
+                        fill
                         className="w-full h-full object-cover group-hover:scale-105 md:group-hover:scale-110 transition-transform duration-500 cursor-pointer"
-                        loading="lazy"
-                        decoding="async"
                         onClick={() => {
                           window.open(image, '_blank')
                         }}

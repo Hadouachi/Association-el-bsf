@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import UploadedImage from './UploadedImage'
 
 interface ActivityCoverImageProps {
   activityId: string
@@ -54,20 +55,13 @@ export default function ActivityCoverImage({
   
   return (
     <div className={`relative ${className}`}>
-      <img
+      <UploadedImage
         src={finalImageSrc}
         alt={title}
+        fill
         className="w-full h-full object-cover"
-        onLoad={handleImageLoad}
         onError={handleImageError}
       />
-      
-      {/* Indicateur de chargement */}
-      {isLoading && (
-        <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-        </div>
-      )}
       
       {/* Indicateur d'image par défaut */}
       {showDefaultIndicator && isDefaultImage && (
