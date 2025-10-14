@@ -124,11 +124,29 @@ async function exportData() {
 async function exportFallbackData() {
   console.log('📦 Export des données de fallback...');
   
-  // Importer les données locales
-  const { getAllLocalActivities } = require('./data/localActivities');
+  // Données de fallback hardcodées (pas d'import nécessaire)
+  const fallbackActivities = [
+    {
+      id: "1",
+      title: "Formation React - Développement Web",
+      description: "Apprenez React de A à Z avec des projets pratiques",
+      longDescription: "Cette formation complète vous permettra de maîtriser React et de développer des applications web modernes.",
+      date: "2024-12-15",
+      time: "14:00",
+      location: "Salle de formation",
+      participants: "20",
+      status: "upcoming",
+      coverImage: "/images/activities/test-react.svg",
+      images: [],
+      videos: [],
+      contentBlocks: [],
+      createdAt: "2024-12-01T10:00:00.000Z",
+      updatedAt: "2024-12-01T10:00:00.000Z"
+    }
+  ];
   
   const fallbackData = {
-    activities: getAllLocalActivities(),
+    activities: fallbackActivities,
     news: [
       {
         id: "1",
