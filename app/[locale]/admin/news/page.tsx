@@ -7,6 +7,7 @@ import { Plus, Edit, Eye, Trash2, Calendar, User, Image as ImageIcon } from 'luc
 import Link from 'next/link'
 import { News } from '@/lib/newsStore'
 import AdminNav from '@/components/admin/AdminNav'
+import UploadedImage from '@/components/ui/UploadedImage'
 
 export default function NewsListPage() {
   const router = useRouter()
@@ -202,10 +203,12 @@ export default function NewsListPage() {
                         <div className="flex items-center">
                           {article.image && (
                             <div className="flex-shrink-0 h-12 w-12">
-                              <img
-                                className="h-12 w-12 rounded-lg object-cover"
+                              <UploadedImage
                                 src={article.image}
                                 alt={article.title}
+                                width={48}
+                                height={48}
+                                className="h-12 w-12 rounded-lg object-cover"
                               />
                             </div>
                           )}

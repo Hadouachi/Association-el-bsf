@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { Calendar, User, ArrowRight, Clock, Image as ImageIcon } from 'lucide-react'
 import { useNewsStore, News } from '@/lib/newsStore'
 import Link from 'next/link'
+import UploadedImage from '@/components/ui/UploadedImage'
 
 interface NewsPageProps {
   params: { locale: string }
@@ -106,18 +107,13 @@ export default function NewsPage({ params: { locale } }: NewsPageProps) {
                   </h2>
                   <div className="news-card">
                     <div className="md:flex">
-                      <div className="md:w-1/2 featured-news-image-container">
-                        {featuredNews.image ? (
-                          <img 
-                            src={featuredNews.image} 
-                            alt={featuredNews.title}
-                            className="featured-news-image"
-                          />
-                        ) : (
-                          <div className="h-64 md:h-full bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center">
-                            <div className="text-white text-8xl">📰</div>
-                          </div>
-                        )}
+                      <div className="md:w-1/2 featured-news-image-container relative">
+                        <UploadedImage
+                          src={featuredNews.image}
+                          alt={featuredNews.title}
+                          fill
+                          className="featured-news-image"
+                        />
                       </div>
                       <div className="md:w-1/2 p-8">
                         <div className="flex items-center mb-4">
@@ -159,18 +155,13 @@ export default function NewsPage({ params: { locale } }: NewsPageProps) {
                   <Link key={article.id} href={`/fr/news/${article.id}`}>
                     <div className="news-card">
                       {/* Article Image */}
-                      <div className="news-image-container">
-                        {article.image ? (
-                          <img 
-                            src={article.image} 
-                            alt={article.title}
-                            className="news-image"
-                          />
-                        ) : (
-                          <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center">
-                            <div className="text-white text-6xl">📰</div>
-                          </div>
-                        )}
+                      <div className="news-image-container relative">
+                        <UploadedImage
+                          src={article.image}
+                          alt={article.title}
+                          fill
+                          className="news-image"
+                        />
                       </div>
 
                       {/* Article Content */}

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Clock, User, ArrowRight } from 'lucide-react'
 import { News } from '@/lib/newsStore'
+import UploadedImage from '@/components/ui/UploadedImage'
 
 interface NewsCardProps {
   article: News
@@ -24,18 +25,13 @@ export default function NewsCard({
       <Link href={`/${locale}/news/${article.id}`}>
         <div className="news-card">
           {/* Article Image */}
-          <div className="news-image-container h-48">
-            {article.image ? (
-              <img 
-                src={article.image} 
-                alt={article.title}
-                className="news-image"
-              />
-            ) : (
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center">
-                <div className="text-white text-6xl">📰</div>
-              </div>
-            )}
+          <div className="news-image-container h-48 relative">
+            <UploadedImage
+              src={article.image}
+              alt={article.title}
+              fill
+              className="news-image"
+            />
           </div>
 
           {/* Article Content */}

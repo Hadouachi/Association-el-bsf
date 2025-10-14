@@ -6,6 +6,7 @@ import { Calendar, User, ArrowLeft, Clock, Image as ImageIcon } from 'lucide-rea
 import { useNewsStore, News } from '@/lib/newsStore'
 import Link from 'next/link'
 import MarkdownRenderer from '@/components/MarkdownRenderer'
+import UploadedImage from '@/components/ui/UploadedImage'
 
 export default function NewsDetailPage() {
   const params = useParams()
@@ -96,10 +97,11 @@ export default function NewsDetailPage() {
         <article className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Article Image */}
           {news.image && (
-            <div className="news-image-container">
-              <img 
-                src={news.image} 
+            <div className="news-image-container relative">
+              <UploadedImage
+                src={news.image}
                 alt={news.title}
+                fill
                 className="news-image"
               />
             </div>
