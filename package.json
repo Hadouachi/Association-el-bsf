@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node init-database.js && node export-for-production.js && next build",
+    "build": "npx prisma generate && node init-database.js && node export-for-production.js && next build",
     "check-db": "node check-database.js",
     "start": "next start",
     "lint": "next lint",

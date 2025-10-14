@@ -1,10 +1,19 @@
-import { PrismaClient } from '@prisma/client'
+// Prisma n'est pas utilisé en production - données statiques uniquement
+let prisma: any = null
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined
+if (process.env.NODE_ENV !== 'production' && process.env.VERCEL !== 'true') {
+  try {
+    const { PrismaClient } = require('@prisma/client')
+    const globalForPrisma = globalThis as unknown as {
+      prisma: any | undefined
+    }
+    prisma = globalForPrisma.prisma ?? new PrismaClient()
+    globalForPrisma.prisma = prisma
+  } catch (error) {
+    console.log('⚠️ Prisma non disponible en production')
+    prisma = null
+  }
 }
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient()
-
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+export { prisma }
 
