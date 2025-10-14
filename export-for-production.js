@@ -17,10 +17,10 @@ async function exportData() {
   try {
     console.log('🔄 Tentative de connexion à la base de données locale...');
     
-    // En production Vercel, utiliser les données de fallback
+    // En production Vercel, utiliser les données exportées localement
     if (process.env.VERCEL === 'true') {
-      console.log('✅ Mode production Vercel - Utilisation des données de fallback');
-      await exportFallbackData();
+      console.log('✅ Mode production Vercel - Utilisation des données exportées localement');
+      await useExportedData();
       return;
     }
     
@@ -117,6 +117,31 @@ async function exportData() {
     if (connection) {
       await connection.end();
     }
+  }
+}
+
+// Fonction pour utiliser les données exportées localement
+async function useExportedData() {
+  console.log('📦 Utilisation des données exportées localement...');
+  
+  // Le fichier data-export.json est déjà présent dans le repo
+  // Il contient les vraies données exportées localement
+  const exportPath = path.join(__dirname, 'data-export.json');
+  
+  if (fs.existsSync(exportPath)) {
+    console.log('✅ Fichier data-export.json trouvé - Utilisation des vraies données');
+    const rawData = fs.readFileSync(exportPath, 'utf8');
+    const data = JSON.parse(rawData);
+    
+    console.log('\n📊 Résumé des données exportées:');
+    console.log(`   - Activités: ${data.activities.length}`);
+    console.log(`   - Actualités: ${data.news.length}`);
+    console.log(`   - Contenu À propos: ${data.about.length}`);
+    console.log('\n🚀 Prêt pour le déploiement !');
+    console.log('   Les vraies données locales seront utilisées en production.');
+  } else {
+    console.log('⚠️ Fichier data-export.json non trouvé, utilisation des données de fallback');
+    await exportFallbackData();
   }
 }
 
