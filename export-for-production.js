@@ -105,14 +105,14 @@ async function exportData() {
 
     } catch (dbError) {
       console.log('⚠️ Impossible de se connecter à la base de données locale');
-      console.log('✅ Utilisation des données de fallback');
-      await exportFallbackData();
+      console.log('✅ Utilisation des données exportées localement');
+      await useExportedData();
     }
 
   } catch (error) {
     console.error('❌ Erreur lors de l\'export:', error);
-    console.log('✅ Utilisation des données de fallback');
-    await exportFallbackData();
+    console.log('✅ Utilisation des données exportées localement');
+    await useExportedData();
   } finally {
     if (connection) {
       await connection.end();
