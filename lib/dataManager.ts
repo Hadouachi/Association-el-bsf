@@ -60,7 +60,7 @@ export const loadStaticData = async () => {
 }
 
 // Données statiques hardcodées pour la production (fallback)
-const FALLBACK_DATA = {
+export const FALLBACK_DATA = {
   activities: [
     {
       id: "1",

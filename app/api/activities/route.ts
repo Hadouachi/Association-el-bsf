@@ -17,9 +17,14 @@ export async function GET() {
     if (!isLocal || process.env.VERCEL === 'true') {
       console.log('📊 Récupération des activités (mode production - données statiques)')
       const activities = await getActivities()
-      if (activities) {
+      if (activities && activities.length > 0) {
         console.log('✅ Activités statiques chargées:', activities.length)
         return NextResponse.json(activities)
+      } else {
+        console.log('⚠️ Aucune activité statique trouvée, utilisation des données de fallback')
+        // Utiliser les données de fallback directement
+        const { FALLBACK_DATA } = await import('../../../lib/dataManager')
+        return NextResponse.json(FALLBACK_DATA.activities)
       }
     }
 
@@ -57,10 +62,18 @@ export async function GET() {
     return NextResponse.json(parsedActivities)
   } catch (error) {
     console.error('❌ Error fetching activities:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch activities', details: error instanceof Error ? error.message : 'Erreur inconnue' },
-      { status: 500 }
-    )
+    // En cas d'erreur, retourner les données de fallback
+    try {
+      const { FALLBACK_DATA } = await import('../../../lib/dataManager')
+      console.log('⚠️ Utilisation des données de fallback en cas d\'erreur')
+      return NextResponse.json(FALLBACK_DATA.activities)
+    } catch (fallbackError) {
+      console.error('❌ Erreur même avec les données de fallback:', fallbackError)
+      return NextResponse.json(
+        { error: 'Failed to fetch activities', details: error instanceof Error ? error.message : 'Erreur inconnue' },
+        { status: 500 }
+      )
+    }
   }
 }
 
