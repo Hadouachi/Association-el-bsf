@@ -60,7 +60,7 @@
       "location": "Salle de mosqué ",
       "participants": "600",
       "status": "ongoing",
-      "coverImage": "/uploads/activities/1758486415467-xye4p8adskb.jpg",
+      "coverImage": "/images/activities/1758486415467-xye4p8adskb.jpg",
       "images": [],
       "videos": [],
       "contentBlocks": [
@@ -84,11 +84,11 @@
           "order": 2,
           "style": "",
           "images": [
-            "/uploads/activities/1758486550808-7jw1yn6z2y4.jpg",
-            "/uploads/activities/1758486550867-c0ncxfy4heq.jpg",
-            "/uploads/activities/1758486550937-orebqtbu7bs.jpg",
-            "/uploads/activities/1758486550987-ac2czrauea.jpg",
-            "/uploads/images/1759603665742-qjgc1slbj5.png"
+            "/images/activities/1758486550808-7jw1yn6z2y4.jpg",
+            "/images/activities/1758486550867-c0ncxfy4heq.jpg",
+            "/images/activities/1758486550937-orebqtbu7bs.jpg",
+            "/images/activities/1758486550987-ac2czrauea.jpg",
+            "/images/images/1759603665742-qjgc1slbj5.png"
           ],
           "content": ""
         },
@@ -105,11 +105,11 @@
           "order": 4,
           "style": "",
           "images": [
-            "/uploads/images/1759955515412-t6w0jd0bn7c.jpg",
-            "/uploads/images/1759955515463-jw4cb4jmpee.jpg",
-            "/uploads/images/1759955515517-vbthvyal53g.jpg",
-            "/uploads/images/1759955515651-ho0obm759s.jpg",
-            "/uploads/images/1759955515733-qy43gr336ss.jpg"
+            "/images/images/1759955515412-t6w0jd0bn7c.jpg",
+            "/images/images/1759955515463-jw4cb4jmpee.jpg",
+            "/images/images/1759955515517-vbthvyal53g.jpg",
+            "/images/images/1759955515651-ho0obm759s.jpg",
+            "/images/images/1759955515733-qy43gr336ss.jpg"
           ],
           "content": ""
         }
@@ -127,7 +127,7 @@
       "location": "salle de réunion ",
       "participants": "600",
       "status": "upcoming",
-      "coverImage": "/uploads/activities/1758480500218-72tpwq59dw8.jpg",
+      "coverImage": "/images/activities/1758480500218-72tpwq59dw8.jpg",
       "images": [],
       "videos": [],
       "contentBlocks": [],
@@ -144,7 +144,7 @@
       "location": "salle de réunion ",
       "participants": "600",
       "status": "upcoming",
-      "coverImage": "/uploads/activities/1758480486084-94mugheqvah.jpg",
+      "coverImage": "/images/activities/1758480486084-94mugheqvah.jpg",
       "images": [],
       "videos": [],
       "contentBlocks": [],
@@ -163,8 +163,8 @@
       "status": "completed",
       "coverImage": "/images/activity-cover1.jpg",
       "images": [
-        "/uploads/activities/test1.jpg",
-        "/uploads/activities/test2.jpg"
+        "/images/activities/test1.jpg",
+        "/images/activities/test2.jpg"
       ],
       "videos": [],
       "contentBlocks": [
@@ -190,8 +190,8 @@
           "order": 2,
           "style": "",
           "images": [
-            "/uploads/activities/gallery1.jpg",
-            "/uploads/activities/gallery2.jpg"
+            "/images/activities/gallery1.jpg",
+            "/images/activities/gallery2.jpg"
           ],
           "content": "Galerie de test"
         }
@@ -208,7 +208,7 @@
       "content": "**Pour répondre à la demande croissante, nous ouvrons d**e nouveaux cours de Tajweed. Ces cours sont dispensés par des professeurs qualifiés et certifiés dans l enseignement des règles de récitation du Coran.",
       "author": "Prof. Fatima",
       "category": "Formation",
-      "image": "/uploads/images/1759596914187-lokglb7gwx.jpg",
+      "image": "/images/images/1759596914187-lokglb7gwx.jpg",
       "status": "published",
       "publishedAt": "2025-10-04T16:55:17.000Z",
       "createdAt": "2025-10-04T16:33:44.000Z",
@@ -221,7 +221,7 @@
       "content": "Une cérémonie émouvante s est déroulée ce weekend pour célébrer la réussite de nos 25 étudiants qui ont terminé leur mémorisation complète du Coran. Cette cérémonie a rassemblé familles, amis et membres de la communauté dans une atmosphère de joie et de fierté.",
       "author": "Directeur El BSF",
       "category": "Événement",
-      "image": "/uploads/images/1759596884899-2wnrajrg57g.jpg",
+      "image": "/images/images/1759596884899-2wnrajrg57g.jpg",
       "status": "published",
       "publishedAt": "2025-10-04T16:54:52.000Z",
       "createdAt": "2025-10-04T16:33:44.000Z",
@@ -234,7 +234,7 @@
       "content": "Notre association est fière d annoncer le lancement d un nouveau programme de mémorisation du Coran spécialement conçu pour les jeunes. Ce programme utilise des méthodes pédagogiques modernes et adaptées aux besoins spécifiques des adolescents. Il comprend des sessions interactives, des outils numériques d apprentissage et un suivi personnalisé pour chaque étudiant.",
       "author": "Imam Ahmed",
       "category": "Programme",
-      "image": "/uploads/images/1759596861527-0834zd0moex4.jpg",
+      "image": "/images/images/1759596861527-0834zd0moex4.jpg",
       "status": "published",
       "publishedAt": "2025-10-04T16:54:26.000Z",
       "createdAt": "2025-10-04T16:33:44.000Z",
@@ -248,7 +248,7 @@
       "title": "À propos de l'Association El BSF",
       "subtitle": "Notre mission et notre vision",
       "description": "L'Association El BSF est une organisation dédiée à la promotion de l'éducation islamique et à la mémorisation du Coran. Nous nous engageons à offrir des programmes de qualité pour tous les âges.",
-      "coverImage": "/uploads/images/1759601428597-ywac0k63u2.png",
+      "coverImage": "/images/images/1759601428597-ywac0k63u2.png",
       "status": "published",
       "content": null,
       "images": null,
@@ -259,6 +259,6 @@
       "updatedAt": "2025-10-04T18:10:33.000Z"
     }
   ],
-  "exportedAt": "2025-10-14T17:28:08.450Z",
+  "exportedAt": "2025-10-14T17:37:20.740Z",
   "version": "1.0.0"
 }

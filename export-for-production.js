@@ -79,12 +79,20 @@ async function exportData() {
         version: '1.0.0'
       };
 
-      // Sauvegarder dans data-export.json
-      const exportPath = path.join(__dirname, 'data-export.json');
-      fs.writeFileSync(exportPath, JSON.stringify(exportData, null, 2));
-      
-      console.log('✅ Données exportées vers data-export.json');
-      console.log(`📁 Fichier: ${exportPath}`);
+    // Sauvegarder dans data-export.json
+    const exportPath = path.join(__dirname, 'data-export.json');
+    fs.writeFileSync(exportPath, JSON.stringify(exportData, null, 2));
+    
+    console.log('✅ Données exportées vers data-export.json');
+    console.log(`📁 Fichier: ${exportPath}`);
+    
+    // Copier les images uploadées
+    console.log('🖼️ Copie des images uploadées...');
+    try {
+      require('./copy-uploaded-images.js');
+    } catch (error) {
+      console.log('⚠️ Erreur lors de la copie des images:', error.message);
+    }
       
       // Afficher un résumé
       console.log('\n📊 Résumé de l\'export:');
