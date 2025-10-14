@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import mysql from 'mysql2/promise'
-import { getActivities, isLocal } from '../../../lib/dataManager'
+import { getActivities, isLocal, FALLBACK_DATA } from '../../../lib/dataManager'
+import fs from 'fs'
+import path from 'path'
 
 // Always connect using DATABASE_URL to avoid localhost fallbacks in production
 async function getConnection() {
@@ -16,16 +18,25 @@ export async function GET() {
     // En production, utiliser les données statiques
     if (!isLocal || process.env.VERCEL === 'true') {
       console.log('📊 Récupération des activités (mode production - données statiques)')
-      const activities = await getActivities()
-      if (activities && activities.length > 0) {
-        console.log('✅ Activités statiques chargées:', activities.length)
-        return NextResponse.json(activities)
-      } else {
-        console.log('⚠️ Aucune activité statique trouvée, utilisation des données de fallback')
-        // Utiliser les données de fallback directement
-        const { FALLBACK_DATA } = await import('../../../lib/dataManager')
-        return NextResponse.json(FALLBACK_DATA.activities)
+      
+      // Charger directement le fichier data-export.json
+      try {
+        const dataPath = path.join(process.cwd(), 'data-export.json')
+        if (fs.existsSync(dataPath)) {
+          const rawData = fs.readFileSync(dataPath, 'utf8')
+          const exportedData = JSON.parse(rawData)
+          
+          if (exportedData.activities && exportedData.activities.length > 0) {
+            console.log('✅ Activités statiques chargées depuis data-export.json:', exportedData.activities.length)
+            return NextResponse.json(exportedData.activities)
+          }
+        }
+      } catch (error) {
+        console.error('❌ Erreur lors du chargement de data-export.json:', error)
       }
+      
+      console.log('⚠️ Aucune activité statique trouvée, utilisation des données de fallback')
+      return NextResponse.json(FALLBACK_DATA.activities)
     }
 
     // En local, utiliser la base de données

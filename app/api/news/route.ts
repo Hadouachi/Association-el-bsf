@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getConnection } from '@/config/database'
-import { getNews, isLocal } from '../../../lib/dataManager'
+import { getNews, isLocal, FALLBACK_DATA } from '../../../lib/dataManager'
+import fs from 'fs'
+import path from 'path'
 
 // GET - Récupérer toutes les actualités
 export async function GET(request: NextRequest) {
@@ -8,11 +10,25 @@ export async function GET(request: NextRequest) {
     // En production, utiliser les données statiques
     if (!isLocal || process.env.VERCEL === 'true') {
       console.log('📰 Récupération des actualités (mode production - données statiques)')
-      const news = await getNews()
-      if (news) {
-        console.log('✅ Actualités statiques chargées:', news.length)
-        return NextResponse.json(news)
+      
+      // Charger directement le fichier data-export.json
+      try {
+        const dataPath = path.join(process.cwd(), 'data-export.json')
+        if (fs.existsSync(dataPath)) {
+          const rawData = fs.readFileSync(dataPath, 'utf8')
+          const exportedData = JSON.parse(rawData)
+          
+          if (exportedData.news && exportedData.news.length > 0) {
+            console.log('✅ Actualités statiques chargées depuis data-export.json:', exportedData.news.length)
+            return NextResponse.json(exportedData.news)
+          }
+        }
+      } catch (error) {
+        console.error('❌ Erreur lors du chargement de data-export.json:', error)
       }
+      
+      console.log('⚠️ Aucune actualité statique trouvée, utilisation des données de fallback')
+      return NextResponse.json(FALLBACK_DATA.news)
     }
 
     // En local, utiliser la base de données
