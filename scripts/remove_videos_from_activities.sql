@@ -28,3 +28,4 @@ SELECT 'Migration terminée: Champ videos supprimé des activités' AS status;
 
 
 
+
