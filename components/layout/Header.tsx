@@ -52,7 +52,7 @@ export default function Header({ locale }: HeaderProps) {
                 <span className="text-white font-bold text-lg">ب</span>
               </div>
               <span className="ml-3 text-xl font-bold text-gray-900">
-                El BSF
+                A Rahma
               </span>
             </Link>
           </div>
@@ -155,7 +155,7 @@ export default function Header({ locale }: HeaderProps) {
           {/* Mobile Menu Footer */}
           <div className="bg-gradient-to-r from-primary-600 to-secondary-500 px-6 py-3">
             <p className="text-white text-sm text-center font-medium">
-              Association El BSF - Mémorisation du Coran Karim
+              Association A Rahma - Mémorisation du Coran Karim
             </p>
           </div>
         </div>

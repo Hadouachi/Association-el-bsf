@@ -37,7 +37,7 @@ export default function Footer({ locale }: FooterProps) {
               <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">ب</span>
               </div>
-              <span className="ml-3 text-xl font-bold">El BSF</span>
+              <span className="ml-3 text-xl font-bold">A Rahma</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md mx-auto md:mx-0 leading-relaxed">
               {t('description')}
@@ -96,7 +96,7 @@ export default function Footer({ locale }: FooterProps) {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Association El BSF. {t('rights')}
+            © {new Date().getFullYear()} Association A Rahma. {t('rights')}
           </p>
         </div>
       </div>
