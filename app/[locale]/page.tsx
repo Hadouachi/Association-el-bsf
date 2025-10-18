@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import FeatureIcon from '@/app/components/FeatureIcon'
 import UploadedImage from '@/components/ui/UploadedImage'
 import NewsCard from '@/components/NewsCard'
+import ScrollAnimation, { StaggeredAnimation, StaggeredItem } from '@/components/animations/ScrollAnimation'
 
 interface HomePageProps {
   params: { locale: string }
@@ -32,6 +33,10 @@ interface News {
   category: string
   image: string
   publishedAt: string
+  content: string
+  status: string
+  createdAt: string
+  updatedAt: string
 }
 
 export default function HomePage({ params: { locale } }: HomePageProps) {
@@ -212,61 +217,58 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
       {/* Features Section */}
       <section className="py-20 features-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <ScrollAnimation className="text-center mb-16" direction="fade" delay={0.2}>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {t('features.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Notre association s'engage à promouvoir l'éducation islamique et la mémorisation du Coran
             </p>
-          </div>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <StaggeredAnimation className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto" staggerDelay={0.2}>
             {features.map((feature, index) => (
-              <div
-                key={index}
-                className="feature-card"
-              >
-                <div className="feature-icon-container">
-                  <Image
-                    src={feature.icon}
-                    alt={feature.title}
-                    width={128}
-                    height={128}
-                    className="feature-icon"
-                  />
+              <StaggeredItem key={index} direction="up" distance={50}>
+                <div className="feature-card">
+                  <div className="feature-icon-container">
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      width={128}
+                      height={128}
+                      className="feature-icon"
+                    />
+                  </div>
+                  <h3 className="feature-title">
+                    {feature.title}
+                  </h3>
+                  <p className="feature-description">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="feature-title">
-                  {feature.title}
-                </h3>
-                <p className="feature-description">
-                  {feature.description}
-                </p>
-              </div>
+              </StaggeredItem>
             ))}
-          </div>
+          </StaggeredAnimation>
         </div>
       </section>
 
       {/* Recent Activities Section */}
       <section className="section-spacing">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <ScrollAnimation className="text-center mb-16" direction="fade" delay={0.3}>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-balance">
               Activités Récentes
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Découvrez nos dernières activités et événements
             </p>
-          </div>
+          </ScrollAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <StaggeredAnimation className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto" staggerDelay={0.15}>
             {recentActivities.length > 0 ? (
               recentActivities.map((activity) => (
-              <div
-                key={activity.id}
-                className="activity-card"
-              >
+              <StaggeredItem key={activity.id} direction="up" distance={40}>
+                <div className="activity-card">
                 <div className="h-40 relative overflow-hidden">
                   {/* Test direct avec Image Next.js */}
                   {activity.coverImage ? (
@@ -329,18 +331,19 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
                     </Link>
                   </div>
                 </div>
-              </div>
+                </div>
+              </StaggeredItem>
               ))
             ) : (
-              <div className="col-span-full text-center py-12">
+              <StaggeredItem className="col-span-full text-center py-12" direction="up">
                 <div className="text-gray-400 text-6xl mb-4">📅</div>
                 <h3 className="text-xl font-semibold text-gray-600 mb-2">Aucune activité pour le moment</h3>
                 <p className="text-gray-500">Revenez bientôt pour découvrir nos prochaines activités !</p>
-              </div>
+              </StaggeredItem>
             )}
-          </div>
+          </StaggeredAnimation>
 
-          <div className="text-center mt-12">
+          <ScrollAnimation className="text-center mt-12" direction="fade" delay={0.5}>
             <Link
               href={`/${locale}/activities`}
               className="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
@@ -351,7 +354,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
             <p className="text-gray-600 mt-3 text-sm">
               {activities.length > 4 ? `${activities.length - 4} autres activités disponibles` : 'Toutes nos activités'}
             </p>
-          </div>
+          </ScrollAnimation>
         </div>
       </section>
 
@@ -359,7 +362,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
       {recentNews.length > 0 && (
         <section className="section-spacing home-news-section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 news-section-header">
+            <ScrollAnimation className="text-center mb-16 news-section-header" direction="fade" delay={0.2}>
               <div className="flex items-center justify-center mb-4">
                 <Newspaper className="w-8 h-8 text-primary-600 mr-3" />
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-balance">
@@ -369,7 +372,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Restez informé de nos dernières nouvelles et annonces
               </p>
-            </div>
+            </ScrollAnimation>
 
             {newsLoading ? (
               <div className="flex justify-center items-center py-12">
@@ -406,7 +409,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
               </div>
             )}
 
-            <div className="text-center mt-12">
+            <ScrollAnimation className="text-center mt-12" direction="fade" delay={0.4}>
               <Link
                 href={`/${locale}/news`}
                 className="btn-primary"
@@ -414,7 +417,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
                 Voir toutes les actualités
                 <ArrowRight className="w-5 h-5" />
               </Link>
-            </div>
+            </ScrollAnimation>
           </div>
         </section>
       )}
@@ -422,30 +425,34 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
       {/* CTA Section */}
       <section className="section-spacing community-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="max-w-4xl mx-auto community-content">
+          <ScrollAnimation className="max-w-4xl mx-auto community-content" direction="fade" delay={0.3}>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
               Rejoignez notre communauté
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
               Participez à nos programmes de mémorisation et d'éducation islamique
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href={`/${locale}/programs`}
-                className="btn-primary bg-white text-primary-600 hover:bg-gray-100"
-              >
-                Nos programmes
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href={`/${locale}/contact`}
-                className="btn-primary border-2 border-white bg-transparent hover:bg-white hover:text-primary-600"
-              >
-                Nous contacter
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-          </div>
+            <StaggeredAnimation className="flex flex-col sm:flex-row gap-4 justify-center" staggerDelay={0.2}>
+              <StaggeredItem direction="up" distance={30}>
+                <Link
+                  href={`/${locale}/programs`}
+                  className="btn-primary bg-white text-primary-600 hover:bg-gray-100"
+                >
+                  Nos programmes
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </StaggeredItem>
+              <StaggeredItem direction="up" distance={30}>
+                <Link
+                  href={`/${locale}/contact`}
+                  className="btn-primary border-2 border-white bg-transparent hover:bg-white hover:text-primary-600"
+                >
+                  Nous contacter
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </StaggeredItem>
+            </StaggeredAnimation>
+          </ScrollAnimation>
         </div>
       </section>
     </div>

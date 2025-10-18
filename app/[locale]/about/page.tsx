@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useAboutStore } from '@/lib/aboutStore'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
+import ScrollAnimation, { StaggeredAnimation, StaggeredItem } from '@/components/animations/ScrollAnimation'
 
 interface AboutPageProps {
   params: { locale: string }
@@ -57,7 +58,7 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
         
         {/* Contenu */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="text-center max-w-4xl mx-auto">
+          <ScrollAnimation className="text-center max-w-4xl mx-auto" direction="fade" delay={0.3}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               {aboutContent.title}
             </h1>
@@ -66,16 +67,16 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
                 {aboutContent.subtitle}
               </p>
             )}
-          </div>
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* Section Mosquée LED */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <StaggeredAnimation className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" staggerDelay={0.3}>
             {/* Image */}
-            <div className="order-2 lg:order-1">
+            <StaggeredItem className="order-2 lg:order-1" direction="left" distance={60}>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/about/mosque_led.jpg"
@@ -86,16 +87,16 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
-            </div>
-            
+            </StaggeredItem>
+
             {/* Texte */}
-            <div className="order-1 lg:order-2">
+            <StaggeredItem className="order-1 lg:order-2" direction="right" distance={60}>
               <div className="max-w-lg mx-auto lg:mx-0">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                   Découvrir la mosquée Akhachab Amghar
                 </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  Grâce à un éclairage LED spectaculaire, notre mosquée brille de mille feux, 
+                  Grâce à un éclairage LED spectaculaire, notre mosquée brille de mille feux,
                   créant une atmosphère spirituelle et moderne qui inspire la sérénité et la contemplation.
                 </p>
                 <div className="flex items-center space-x-4">
@@ -108,8 +109,8 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </StaggeredItem>
+          </StaggeredAnimation>
         </div>
       </section>
 
@@ -117,7 +118,7 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
       {aboutContent.description && (
         <section className="py-20 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-lg max-w-none">
+            <ScrollAnimation className="prose prose-lg max-w-none" direction="fade" delay={0.4}>
               <div className="text-gray-700 leading-relaxed text-justify">
                 {aboutContent.description.split('\n').map((paragraph, index) => (
                   <p key={index} className="mb-4">
@@ -125,7 +126,7 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
                   </p>
                 ))}
               </div>
-            </div>
+            </ScrollAnimation>
           </div>
         </section>
       )}
@@ -133,47 +134,53 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
       {/* Content Blocks Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <ScrollAnimation className="text-center mb-12" direction="fade" delay={0.2}>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Notre Association
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Découvrez nos valeurs, notre mission et notre engagement envers la communauté
             </p>
-          </div>
+          </ScrollAnimation>
           
           {/* Placeholder for future content blocks */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📚</span>
+          <StaggeredAnimation className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.2}>
+            <StaggeredItem direction="up" distance={40}>
+              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">📚</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Éducation</h3>
+                <p className="text-gray-600">
+                  Nous nous engageons à offrir une éducation islamique de qualité pour tous les âges.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Éducation</h3>
-              <p className="text-gray-600">
-                Nous nous engageons à offrir une éducation islamique de qualité pour tous les âges.
-              </p>
-            </div>
+            </StaggeredItem>
             
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-              <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🤝</span>
+            <StaggeredItem direction="up" distance={40}>
+              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+                <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🤝</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Communauté</h3>
+                <p className="text-gray-600">
+                  Nous construisons une communauté solidaire basée sur les valeurs islamiques.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Communauté</h3>
-              <p className="text-gray-600">
-                Nous construisons une communauté solidaire basée sur les valeurs islamiques.
-              </p>
-            </div>
+            </StaggeredItem>
             
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🌟</span>
+            <StaggeredItem direction="up" distance={40}>
+              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🌟</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Excellence</h3>
+                <p className="text-gray-600">
+                  Nous visons l'excellence dans tous nos programmes et activités.
+                </p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Excellence</h3>
-              <p className="text-gray-600">
-                Nous visons l'excellence dans tous nos programmes et activités.
-              </p>
-            </div>
-          </div>
+            </StaggeredItem>
+          </StaggeredAnimation>
         </div>
       </section>
     </div>
