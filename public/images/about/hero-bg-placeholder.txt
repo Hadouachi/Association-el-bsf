@@ -1,0 +1,14 @@
+Placeholder pour l'image de fond de la page À propos
+
+Dimensions recommandées :
+- Format : Portrait vertical
+- Largeur : 1080px
+- Hauteur : 1620px (ratio 2:3)
+- Format de fichier : JPG ou PNG
+- Nom du fichier : hero-bg.jpg
+
+Instructions :
+1. Remplacez ce fichier par votre image hero-bg.jpg
+2. L'image sera utilisée comme arrière-plan de la section hero
+3. Un overlay sombre sera automatiquement appliqué pour la lisibilité du texte
+4. L'image sera responsive et s'adaptera à tous les écrans

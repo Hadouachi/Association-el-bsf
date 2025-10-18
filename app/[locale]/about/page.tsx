@@ -41,14 +41,28 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative text-white py-20 min-h-[500px] flex items-center">
+        {/* Image de fond */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/about/hero-bg.jpg"
+            alt="À propos de l'Association El BSF"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlay sombre pour améliorer la lisibilité du texte */}
+          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        </div>
+        
+        {/* Contenu */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               {aboutContent.title}
             </h1>
             {aboutContent.subtitle && (
-              <p className="text-xl md:text-2xl mb-8 text-primary-100">
+              <p className="text-xl md:text-2xl mb-8 text-white/90">
                 {aboutContent.subtitle}
               </p>
             )}
