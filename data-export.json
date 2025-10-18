@@ -68,13 +68,13 @@
           "style": "",
           "videos": [
             {
-              "src": "/images/videos/1760774431272-xmxwskskhko.mp4",
+              "src": "/uploads/videos/1760774431272-xmxwskskhko.mp4",
               "title": "1760774431272-xmxwskskhko.mp4",
               "poster": "",
               "description": ""
             },
             {
-              "src": "/images/videos/1760774544846-rlud1o96y5h.mp4",
+              "src": "/uploads/videos/1760774544846-rlud1o96y5h.mp4",
               "title": "1760774544846-rlud1o96y5h.mp4",
               "poster": "",
               "description": ""
@@ -140,13 +140,13 @@
           "style": "",
           "videos": [
             {
-              "src": "/images/videos/1760775340929-j90en7swmas.mp4",
+              "src": "/uploads/videos/1760775340929-j90en7swmas.mp4",
               "title": "1760775340929-j90en7swmas.mp4",
               "poster": "",
               "description": ""
             },
             {
-              "src": "/images/videos/1760775341011-sxzlhmp74l.mp4",
+              "src": "/uploads/videos/1760775341011-sxzlhmp74l.mp4",
               "title": "1760775341011-sxzlhmp74l.mp4",
               "poster": "",
               "description": ""
@@ -186,13 +186,13 @@
           "style": "",
           "videos": [
             {
-              "src": "/images/videos/1760776253677-71j26krfo6w.mp4",
+              "src": "/uploads/videos/1760776253677-71j26krfo6w.mp4",
               "title": "1760776253677-71j26krfo6w.mp4",
               "poster": "",
               "description": ""
             },
             {
-              "src": "/images/videos/1760776253953-xd29smm1aib.mp4",
+              "src": "/uploads/videos/1760776253953-xd29smm1aib.mp4",
               "title": "1760776253953-xd29smm1aib.mp4",
               "poster": "",
               "description": ""
@@ -284,7 +284,7 @@
           "style": "",
           "videos": [
             {
-              "src": "/images/videos/1760777018854-s0csygedpm.mp4",
+              "src": "/uploads/videos/1760777018854-s0csygedpm.mp4",
               "title": "1760777018854-s0csygedpm.mp4",
               "poster": "",
               "description": ""
@@ -299,17 +299,17 @@
   ],
   "news": [
     {
-      "id": "e54375a3-a13f-11f0-a76f-00ff7f09e563",
-      "title": "Ouverture de nouveaux cours de Tajweed",
-      "excerpt": "Nous ouvrons de nouveaux cours de Tajweed pour tous les niveaux, du débutant au confirmé.",
-      "content": "**Pour répondre à la demande croissante, nous ouvrons d**e nouveaux cours de Tajweed. Ces cours sont dispensés par des professeurs qualifiés et certifiés dans l enseignement des règles de récitation du Coran.",
-      "author": "Prof. Fatima",
-      "category": "Formation",
-      "image": "/images/images/1759596914187-lokglb7gwx.jpg",
+      "id": "e5427eb5-a13f-11f0-a76f-00ff7f09e563",
+      "title": "Nouveau programme de mémorisation pour les jeunes",
+      "excerpt": "Nous lançons un nouveau programme spécialement conçu pour les jeunes de 12 à 18 ans, avec des méthodes d apprentissage adaptées à leur âge.",
+      "content": "Notre association est fière d annoncer le lancement d un nouveau programme de mémorisation du Coran spécialement conçu pour les jeunes. Ce programme utilise des méthodes pédagogiques modernes et adaptées aux besoins spécifiques des adolescents. Il comprend des sessions interactives, des outils numériques d apprentissage et un suivi personnalisé pour chaque étudiant.",
+      "author": "Imam Ahmed",
+      "category": "Programme",
+      "image": "/images/images/1759596861527-0834zd0moex4.jpg",
       "status": "published",
-      "publishedAt": "2025-10-04T16:55:17.000Z",
+      "publishedAt": "2025-10-18T18:22:39.000Z",
       "createdAt": "2025-10-04T16:33:44.000Z",
-      "updatedAt": "2025-10-04T16:55:16.000Z"
+      "updatedAt": "2025-10-18T18:22:38.000Z"
     },
     {
       "id": "e5436f08-a13f-11f0-a76f-00ff7f09e563",
@@ -323,28 +323,15 @@
       "publishedAt": "2025-10-04T16:54:52.000Z",
       "createdAt": "2025-10-04T16:33:44.000Z",
       "updatedAt": "2025-10-04T16:54:52.000Z"
-    },
-    {
-      "id": "e5427eb5-a13f-11f0-a76f-00ff7f09e563",
-      "title": "Nouveau programme de mémorisation pour les jeunes",
-      "excerpt": "Nous lançons un nouveau programme spécialement conçu pour les jeunes de 12 à 18 ans, avec des méthodes d apprentissage adaptées à leur âge.",
-      "content": "Notre association est fière d annoncer le lancement d un nouveau programme de mémorisation du Coran spécialement conçu pour les jeunes. Ce programme utilise des méthodes pédagogiques modernes et adaptées aux besoins spécifiques des adolescents. Il comprend des sessions interactives, des outils numériques d apprentissage et un suivi personnalisé pour chaque étudiant.",
-      "author": "Imam Ahmed",
-      "category": "Programme",
-      "image": "/images/images/1759596861527-0834zd0moex4.jpg",
-      "status": "published",
-      "publishedAt": "2025-10-04T16:54:26.000Z",
-      "createdAt": "2025-10-04T16:33:44.000Z",
-      "updatedAt": "2025-10-04T16:54:25.000Z"
     }
   ],
   "about": [
     {
       "id": "about-1",
       "type": "ANNOUNCEMENT",
-      "title": "À propos de l'Association A Rahma",
+      "title": "À propos de l'Association El BSF",
       "subtitle": "Notre mission et notre vision",
-      "description": "L'Association A Rahma est une organisation dédiée à la promotion de l'éducation islamique et à la mémorisation du Coran. Nous nous engageons à offrir des programmes de qualité pour tous les âges.",
+      "description": "L'Association El BSF est une organisation dédiée à la promotion de l'éducation islamique et à la mémorisation du Coran. Nous nous engageons à offrir des programmes de qualité pour tous les âges.",
       "coverImage": "/images/images/1759601428597-ywac0k63u2.png",
       "status": "published",
       "content": null,
@@ -356,6 +343,6 @@
       "updatedAt": "2025-10-04T18:10:33.000Z"
     }
   ],
-  "exportedAt": "2025-10-18T14:53:54.616Z",
+  "exportedAt": "2025-10-18T18:24:45.387Z",
   "version": "1.0.0"
 }
