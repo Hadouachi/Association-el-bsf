@@ -46,7 +46,7 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/about/hero-bg.jpg"
-            alt="À propos de l'Association A Rahma"
+            alt="À propos de l'Association Rahma"
             fill
             className="object-cover"
             priority

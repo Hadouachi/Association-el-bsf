@@ -125,7 +125,7 @@ export default function ContactPage({ params: { locale } }: ContactPageProps) {
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">{t('info.address')}</h3>
                       <p className="text-gray-600">
-                        123 Rue de la Mosquée<br />
+                        123 Rue de la Mosquée akhachab amghar<br />
                         75001 Paris, France
                       </p>
                     </div>
