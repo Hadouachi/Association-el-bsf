@@ -48,14 +48,14 @@ export default function Header({ locale }: HeaderProps) {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href={`/${locale}`} className="flex items-center">
-              <div className="w-10 h-10 rounded-lg overflow-hidden">
+              <div className="w-16 h-16 rounded-full overflow-hidden shadow-md border-2 border-primary-100">
                 <img 
                   src="/images/logo_rahma.png" 
                   alt="Logo A Rahma" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <span className="ml-3 text-xl font-bold text-gray-900">
+              <span className="ml-4 text-xl font-bold text-gray-900">
                 A Rahma
               </span>
             </Link>
