@@ -145,23 +145,23 @@ export default function ActivitiesListPageNew() {
               </Link>
             </div>
           ) : (
-            <div className="overflow-hidden">
-              <table className="min-w-full divide-y divide-gray-200">
+            <div className="overflow-x-auto">
+              <table className="w-full divide-y divide-gray-200" style={{tableLayout: 'fixed', width: '100%'}}>
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{width: '200px', maxWidth: '200px'}}>
                       Activité
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{minWidth: '120px'}}>
                       Date & Heure
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{minWidth: '100px'}}>
                       Lieu
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{minWidth: '80px'}}>
                       Statut
                     </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" style={{minWidth: '200px'}}>
                       Actions
                     </th>
                   </tr>
@@ -169,8 +169,8 @@ export default function ActivitiesListPageNew() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   {activities.map((activity) => (
                     <tr key={activity.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
+                      <td className="px-6 py-4" style={{maxWidth: '200px', width: '200px', overflow: 'hidden'}}>
+                        <div className="flex items-center" style={{maxWidth: '200px'}}>
                           {activity.coverImage && (
                             <div className="flex-shrink-0 h-12 w-12">
                               <img
@@ -180,17 +180,34 @@ export default function ActivitiesListPageNew() {
                               />
                             </div>
                           )}
-                          <div className="ml-4">
-                            <div className="text-sm font-medium text-gray-900">
+                          <div className="ml-4" style={{maxWidth: '120px', overflow: 'hidden'}}>
+                            <div 
+                              className="text-sm font-medium text-gray-900" 
+                              style={{
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                maxWidth: '120px'
+                              }}
+                              title={activity.title}
+                            >
                               {activity.title}
                             </div>
-                            <div className="text-sm text-gray-500 truncate max-w-xs">
+                            <div 
+                              className="text-sm text-gray-500"
+                              style={{
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                maxWidth: '120px'
+                              }}
+                            >
                               {activity.description}
                             </div>
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap" style={{minWidth: '120px'}}>
                         <div className="text-sm text-gray-900">
                           {activity.date && new Date(activity.date).toLocaleDateString('fr-FR')}
                         </div>
@@ -198,18 +215,18 @@ export default function ActivitiesListPageNew() {
                           {activity.time}
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap" style={{minWidth: '100px'}}>
                         <div className="flex items-center text-sm text-gray-900">
                           <MapPin className="w-4 h-4 mr-1 text-gray-400" />
-                          {activity.location || 'Non spécifié'}
+                          <span className="truncate">{activity.location || 'Non spécifié'}</span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap" style={{minWidth: '80px'}}>
                         <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(activity.status)}`}>
                           {getStatusText(activity.status)}
                         </span>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium" style={{minWidth: '200px'}}>
                         <div className="flex space-x-2">
                           <Link
                             href={`/activities-new/${activity.id}`}

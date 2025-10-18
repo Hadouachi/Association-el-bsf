@@ -226,3 +226,4 @@ Le composant affiche des indicateurs visuels :
 
 
 
+
