@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react'
 
 interface FooterProps {
@@ -34,8 +35,15 @@ export default function Footer({ locale }: FooterProps) {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">ب</span>
+              <div className="w-12 h-12 relative rounded-full overflow-hidden bg-gradient-to-r from-primary-600 to-secondary-500 p-1">
+                <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                  <Image
+                    src="/images/logo_rahma.png"
+                    alt="Logo A Rahma"
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
               </div>
               <span className="ml-3 text-xl font-bold">A Rahma</span>
             </div>

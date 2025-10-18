@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getConnection } from '@/config/database'
+import { isLocal, FALLBACK_DATA } from '../../../../lib/dataManager'
+import fs from 'fs'
+import path from 'path'
 
 // GET - Récupérer une actualité par ID
 export async function GET(
@@ -8,6 +11,42 @@ export async function GET(
 ) {
   try {
     console.log('📰 Récupération de l\'actualité:', params.id)
+    
+    // En production, utiliser les données statiques
+    if (!isLocal || process.env.VERCEL === 'true') {
+      console.log('📰 Récupération de l\'actualité (mode production - données statiques)')
+      
+      // Charger directement le fichier data-export.json
+      try {
+        const dataPath = path.join(process.cwd(), 'data-export.json')
+        if (fs.existsSync(dataPath)) {
+          const rawData = fs.readFileSync(dataPath, 'utf8')
+          const exportedData = JSON.parse(rawData)
+          
+          if (exportedData.news && exportedData.news.length > 0) {
+            const news = exportedData.news.find((article: any) => article.id === params.id)
+            if (news) {
+              console.log('✅ Actualité statique trouvée:', news.title)
+              return NextResponse.json(news)
+            }
+          }
+        }
+      } catch (error) {
+        console.error('❌ Erreur lors du chargement de data-export.json:', error)
+      }
+      
+      // Fallback vers les données de fallback
+      const fallbackNews = FALLBACK_DATA.news.find((article: any) => article.id === params.id)
+      if (fallbackNews) {
+        console.log('✅ Actualité trouvée dans les données de fallback:', fallbackNews.title)
+        return NextResponse.json(fallbackNews)
+      }
+      
+      console.log('❌ Actualité non trouvée dans les données statiques')
+      return NextResponse.json({ error: 'Actualité non trouvée' }, { status: 404 })
+    }
+
+    // En local, utiliser la base de données
     const connection = await getConnection()
     
     const [rows] = await connection.execute(

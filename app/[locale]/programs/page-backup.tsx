@@ -1,5 +1,3 @@
-'use client'
-
 import { useTranslations } from 'next-intl'
 import { BookOpen, Users, Clock, Star, ArrowRight, Activity, Leaf } from 'lucide-react'
 import Image from 'next/image'
@@ -69,7 +67,7 @@ export default function ProgramsPage({ params: { locale } }: ProgramsPageProps) 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              {t('title')}
+              Nos Programmes
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-100">
               Découvrez nos programmes d'enseignement spécialisés
@@ -94,6 +92,12 @@ export default function ProgramsPage({ params: { locale } }: ProgramsPageProps) 
                     alt={program.title}
                     fill
                     className="object-cover"
+                    onError={(e) => {
+                      // Fallback vers une couleur de fond si l'image n'existe pas
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.parentElement!.style.background = 'linear-gradient(135deg, #3B82F6, #1D4ED8)';
+                    }}
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
                     {program.id === 1 && <BookOpen className="w-16 h-16 text-white" />}
@@ -188,4 +192,4 @@ export default function ProgramsPage({ params: { locale } }: ProgramsPageProps) 
       </section>
     </div>
   )
-} 
+}
