@@ -46,7 +46,7 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/about/hero-bg.jpg"
-            alt="À propos de l'Association El BSF"
+            alt="À propos de l'Association A Rahma"
             fill
             className="object-cover"
             priority
@@ -70,22 +70,48 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
         </div>
       </section>
 
-      {/* Cover Image */}
-      {aboutContent.coverImage && (
-        <section className="py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src={aboutContent.coverImage}
-                alt={aboutContent.title}
-                fill
-                className="object-cover"
-                priority
-              />
+      {/* Section Mosquée LED */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="order-2 lg:order-1">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/about/mosque_led.jpg"
+                  alt="Mosquée Akhachab Amghar avec éclairage LED spectaculaire"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+            </div>
+            
+            {/* Texte */}
+            <div className="order-1 lg:order-2">
+              <div className="max-w-lg mx-auto lg:mx-0">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                  Découvrir la mosquée Akhachab Amghar
+                </h2>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  Grâce à un éclairage LED spectaculaire, notre mosquée brille de mille feux, 
+                  créant une atmosphère spirituelle et moderne qui inspire la sérénité et la contemplation.
+                </p>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🕌</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Architecture moderne</h3>
+                    <p className="text-sm text-gray-600">Alliance entre tradition et innovation</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* Description Section */}
       {aboutContent.description && (
