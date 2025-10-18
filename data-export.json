@@ -1,66 +1,16 @@
 {
   "activities": [
     {
-      "id": "1759958403169dgluidi91",
-      "title": "cv",
-      "description": "",
-      "longDescription": "",
-      "date": "",
-      "time": "",
-      "location": "",
-      "participants": "",
-      "status": "upcoming",
-      "coverImage": "",
-      "images": [],
-      "videos": [],
-      "contentBlocks": [],
-      "createdAt": "2025-10-08T21:20:03.000Z",
-      "updatedAt": "2025-10-08T21:20:03.000Z"
-    },
-    {
-      "id": "1759955226501i9e88anbt",
-      "title": "Test Local - Formation React",
-      "description": "Formation React en local",
-      "longDescription": "Une formation complète sur React avec hooks, context et state management.",
-      "date": "2025-02-01",
-      "time": "14:00",
-      "location": "Centre El BSF Local",
-      "participants": "15",
-      "status": "upcoming",
-      "coverImage": "/images/activities/test-react.svg",
-      "images": [
-        "/images/activities/test-react.svg"
-      ],
-      "videos": [
-        {
-          "src": "/videos/activities/test-react-demo.mp4",
-          "title": "Démonstration React",
-          "poster": "/images/activities/test-react-poster.jpg",
-          "description": "Aperçu de la formation React"
-        }
-      ],
-      "contentBlocks": [
-        {
-          "id": "test-block-1",
-          "type": "text",
-          "order": 1,
-          "content": "Cette activité a été créée en local pour tester le système."
-        }
-      ],
-      "createdAt": "2025-10-08T20:27:06.000Z",
-      "updatedAt": "2025-10-08T20:36:37.000Z"
-    },
-    {
       "id": "1758486561539o3ltau0bx",
-      "title": "Comment on appel les distributeurs de l'eau avec de jus et parfois",
+      "title": "Cérémonie conviviale pour les étudiants et préparation d’un barbecue.",
       "description": "",
       "longDescription": "",
-      "date": "2025-10-12",
-      "time": "15:20",
+      "date": "2024-05-12",
+      "time": "11:00",
       "location": "Salle de mosqué ",
-      "participants": "600",
-      "status": "ongoing",
-      "coverImage": "/images/activities/1758486415467-xye4p8adskb.jpg",
+      "participants": "60",
+      "status": "completed",
+      "coverImage": "/images/images/1760773264267-axx5ip1j9na.jpg",
       "images": [],
       "videos": [],
       "contentBlocks": [
@@ -69,14 +19,14 @@
           "type": "title",
           "order": 0,
           "style": "",
-          "content": "Comment on appel les distributeurs de l'eau avec de jus et parfois"
+          "content": "Mise à disposition de plusieurs gammes de piscines."
         },
         {
           "id": "1758486452992k50nkbrr7",
           "type": "paragraph",
           "order": 1,
           "style": "",
-          "content": "Il en existe plusieurs types :  Distributeur automatique de boissons : eau, jus, soda, café, etc.  Distributeur automatique de snacks : biscuits, chips, barres chocolatées, etc.  Distributeur mixte : qui propose à la fois des boissons et de la nourriture.  📚 Référence :  Norme AFNOR (France) : le terme officiel est “distributeur automatique” (AFNOR NF EN 50597:2015 sur les machines de vente automatique).  En anglais : “vending machine”."
+          "content": "L’association El-BSF, en collaboration avec la mosquée Akhachab Amghar et ses membres, a organisé une journée conviviale dédiée aux étudiants. Cette initiative s’inscrit dans le cadre du renforcement des liens communautaires et du soutien moral apporté aux jeunes, favorisant ainsi l’esprit d’entraide et de fraternité."
         },
         {
           "id": "17584864723292fbts4rz8",
@@ -97,7 +47,7 @@
           "type": "paragraph",
           "order": 3,
           "style": "",
-          "content": "Reformuler ça '' On doit continuer à purger la bosse à gauche, puis  purger légèrement la partie gauche de la faille (cette partie masque la profondeur de la faille) pour bien redresser le front avant de le lever. La faille est assez profonde (plus de 1 m), donc il faut supprimer tous les dièdres autour pour voir correctement le front ( et l'étendue de la faille) et faciliter les travaux de BP, et les forages de tire"
+          "content": "Dans une ambiance chaleureuse et détendue, une journée conviviale a été organisée pour les étudiants, marquée par la préparation d’un barbecue collectif et la mise à disposition de plusieurs piscines gonflables. L’activité visait à renforcer les liens entre les participants tout en offrant un moment de détente et de partage. Entre baignade, grillades et échanges, cette journée a permis de créer une atmosphère amicale et festive, propice à la cohésion du groupe."
         },
         {
           "id": "1759955476201gvgsjelm1",
@@ -107,53 +57,156 @@
           "images": [
             "/images/images/1759955515412-t6w0jd0bn7c.jpg",
             "/images/images/1759955515463-jw4cb4jmpee.jpg",
-            "/images/images/1759955515517-vbthvyal53g.jpg",
-            "/images/images/1759955515651-ho0obm759s.jpg",
             "/images/images/1759955515733-qy43gr336ss.jpg"
+          ],
+          "content": ""
+        },
+        {
+          "id": "1760774415931iy77htcy5",
+          "type": "video",
+          "order": 5,
+          "style": "",
+          "videos": [
+            {
+              "src": "/uploads/videos/1760774431272-xmxwskskhko.mp4",
+              "title": "1760774431272-xmxwskskhko.mp4",
+              "poster": "",
+              "description": ""
+            },
+            {
+              "src": "/uploads/videos/1760774544846-rlud1o96y5h.mp4",
+              "title": "1760774544846-rlud1o96y5h.mp4",
+              "poster": "",
+              "description": ""
+            }
+          ],
+          "content": "Récapitulatif en video de la journée ambitieuse "
+        }
+      ],
+      "createdAt": "2025-09-21T20:29:21.000Z",
+      "updatedAt": "2025-10-18T08:02:30.000Z"
+    },
+    {
+      "id": "1758480500325nnsmb7rz5",
+      "title": "Participation à l’organisation d’un championnat de football local – Akhachab Amghar",
+      "description": "",
+      "longDescription": "",
+      "date": "2025-08-15",
+      "time": "16:00",
+      "location": "Stade Akhachab Amghar",
+      "participants": "200",
+      "status": "completed",
+      "coverImage": "/images/images/1760774734398-v9fp29oawlo.jpg",
+      "images": [],
+      "videos": [],
+      "contentBlocks": [
+        {
+          "id": "17607747454421ady25mii",
+          "type": "title",
+          "order": 0,
+          "style": "text-centre",
+          "content": "Participation à l’organisation d’un championnat de football local – Akhachab Amghar"
+        },
+        {
+          "id": "1760774896544obxj78rol",
+          "type": "paragraph",
+          "order": 1,
+          "style": "",
+          "content": "Dans le cadre de ses activités, l’association El-BSF œuvre activement pour le renforcement des liens sociaux et sportifs au sein de la jeunesse. Consciente de l’importance du sport comme vecteur de cohésion, de respect et de dépassement de soi, l’association s’est engagée à encourager la pratique sportive à travers la participation à l’organisation d’événements locaux, notamment des tournois et championnats de football."
+        },
+        {
+          "id": "17607751799242relnb00c",
+          "type": "image-gallery",
+          "order": 2,
+          "style": "",
+          "images": [
+            "/images/images/1760775299075-4d3wbugr6q2.jpg",
+            "/images/images/1760775299166-drnvpr3hy4e.jpg",
+            "/images/images/1760775299209-nvgyhbsl9u.jpg"
+          ],
+          "content": ""
+        },
+        {
+          "id": "1760775181875f2jnmds46",
+          "type": "paragraph",
+          "order": 3,
+          "style": "",
+          "content": "Ainsi, en partenariat avec la mosquée Akhachab Amghar et les membres de la communauté, l’association a contribué à l’organisation d’un championnat de football local, favorisant la rencontre et la convivialité entre les jeunes du quartier. À l’issue de la compétition, des prix ont été remis aux gagnants de la coupe ainsi qu’à tous les participants, dans un esprit de reconnaissance et d’encouragement collectif, témoignant de la volonté de l’association de valoriser l’effort, la solidarité et le fair-play."
+        },
+        {
+          "id": "1760775326581y61ygyllv",
+          "type": "video",
+          "order": 4,
+          "style": "",
+          "videos": [
+            {
+              "src": "/uploads/videos/1760775340929-j90en7swmas.mp4",
+              "title": "1760775340929-j90en7swmas.mp4",
+              "poster": "",
+              "description": ""
+            },
+            {
+              "src": "/uploads/videos/1760775341011-sxzlhmp74l.mp4",
+              "title": "1760775341011-sxzlhmp74l.mp4",
+              "poster": "",
+              "description": ""
+            }
           ],
           "content": ""
         }
       ],
-      "createdAt": "2025-09-21T20:29:21.000Z",
-      "updatedAt": "2025-10-08T20:31:58.000Z"
-    },
-    {
-      "id": "1758480500325nnsmb7rz5",
-      "title": "La  cérémonie de base ",
-      "description": "",
-      "longDescription": "",
-      "date": "2002-12-12",
-      "time": "",
-      "location": "salle de réunion ",
-      "participants": "600",
-      "status": "upcoming",
-      "coverImage": "/images/activities/1758480500218-72tpwq59dw8.jpg",
-      "images": [],
-      "videos": [],
-      "contentBlocks": [],
       "createdAt": "2025-09-21T18:48:20.000Z",
-      "updatedAt": "2025-09-21T18:48:20.000Z"
+      "updatedAt": "2025-10-18T08:18:20.000Z"
     },
     {
       "id": "1758480487072v18fgybof",
-      "title": "La  cérémonie de base ",
+      "title": "Fête du petit Aide au sein de la mosquée Akhachab Amghar",
       "description": "",
       "longDescription": "",
-      "date": "2002-12-12",
-      "time": "",
-      "location": "salle de réunion ",
-      "participants": "600",
-      "status": "upcoming",
-      "coverImage": "/images/activities/1758480486084-94mugheqvah.jpg",
+      "date": "2024-04-10",
+      "time": "09:00",
+      "location": "Mosqué Akhachab Amghar",
+      "participants": "70",
+      "status": "completed",
+      "coverImage": "/images/images/1760775883135-1isk5ldpczy.jpg",
       "images": [],
       "videos": [],
-      "contentBlocks": [],
+      "contentBlocks": [
+        {
+          "id": "1760776073765dmw88aql4",
+          "type": "title",
+          "order": 0,
+          "style": "",
+          "content": "Préparation des cadeaux pour les petits pour L’Aïd, 2024"
+        },
+        {
+          "id": "1760776078262d07cqyf35",
+          "type": "video",
+          "order": 1,
+          "style": "",
+          "videos": [
+            {
+              "src": "/uploads/videos/1760776253677-71j26krfo6w.mp4",
+              "title": "1760776253677-71j26krfo6w.mp4",
+              "poster": "",
+              "description": ""
+            },
+            {
+              "src": "/uploads/videos/1760776253953-xd29smm1aib.mp4",
+              "title": "1760776253953-xd29smm1aib.mp4",
+              "poster": "",
+              "description": ""
+            }
+          ],
+          "content": ""
+        }
+      ],
       "createdAt": "2025-09-21T18:48:07.000Z",
-      "updatedAt": "2025-09-21T18:48:07.000Z"
+      "updatedAt": "2025-10-18T08:30:57.000Z"
     },
     {
       "id": "test-1",
-      "title": "Test Activity",
+      "title": "Cérémonie de remise de diplômes et célébration du Ramadan",
       "description": "Description test",
       "longDescription": "Description longue test",
       "date": "2024-01-15",
@@ -161,7 +214,7 @@
       "location": "Lieu test",
       "participants": "50",
       "status": "completed",
-      "coverImage": "/images/activity-cover1.jpg",
+      "coverImage": "/images/images/1760776479775-v3rtlsly1lf.jpg",
       "images": [
         "/images/activities/test1.jpg",
         "/images/activities/test2.jpg"
@@ -182,22 +235,66 @@
           "order": 1,
           "style": "",
           "images": [],
-          "content": "Paragraphe de test"
+          "content": "Dans le cadre de ses actions culturelles et éducatives, l’association El-BSF, en collaboration avec la mosquée Akhachab Amghar et ses membres, a organisé une cérémonie de remise de diplômes accompagnée d’une célébration du mois sacré du Ramadan. Cet événement avait pour objectif de valoriser les efforts et les réussites des étudiants, tout en renforçant les valeurs de solidarité et de partage portées par cette période spirituelle."
         },
         {
-          "id": "block-3",
+          "id": "17607770344566ndnzc2s0",
           "type": "image-gallery",
           "order": 2,
           "style": "",
           "images": [
-            "/images/activities/gallery1.jpg",
-            "/images/activities/gallery2.jpg"
+            "/images/images/1760777071742-rov89zppl.jpg"
           ],
-          "content": "Galerie de test"
+          "content": ""
+        },
+        {
+          "id": "1760777085966ple05t4r1",
+          "type": "image-gallery",
+          "order": 3,
+          "style": "",
+          "images": [
+            "/images/images/1760777115904-fr8g6p3niu.jpg"
+          ],
+          "content": ""
+        },
+        {
+          "id": "1760777087585gx47jf0v8",
+          "type": "image-gallery",
+          "order": 4,
+          "style": "",
+          "images": [
+            "/images/images/1760777127246-h6woyhxvm6t.jpg"
+          ],
+          "content": ""
+        },
+        {
+          "id": "1760777088049le2l3pvi7",
+          "type": "image-gallery",
+          "order": 5,
+          "style": "",
+          "images": [
+            "/images/images/1760777143096-hvl28ktqsfk.jpg"
+          ],
+          "content": ""
+        },
+        {
+          "id": "17607767463126cdu1s82w",
+          "type": "video",
+          "order": 6,
+          "style": "",
+          "videos": [
+            {
+              "src": "/uploads/videos/1760777018854-s0csygedpm.mp4",
+              "title": "1760777018854-s0csygedpm.mp4",
+              "poster": "",
+              "description": ""
+            }
+          ],
+          "content": ""
         }
       ],
       "createdAt": "2025-09-21T18:42:51.000Z",
-      "updatedAt": "2025-09-21T18:42:51.000Z"
+      "updatedAt": "2025-10-18T08:47:07.000Z"
     }
   ],
   "news": [
@@ -259,6 +356,6 @@
       "updatedAt": "2025-10-04T18:10:33.000Z"
     }
   ],
-  "exportedAt": "2025-10-14T19:30:02.502Z",
+  "exportedAt": "2025-10-18T14:53:54.616Z",
   "version": "1.0.0"
 }
